@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://hnb7cejlsyd4"]
+
+[ext_resource type="Texture2D" uid="uid://cn35ldvn0bhlt" path="res://scenesMain/flappyBird/sprites/misc/ground.png" id="1_38vp4"]
+[ext_resource type="Script" uid="uid://bh5dpmo8tab1y" path="res://scenesMain/flappyBird/scripts/Ground.cs" id="1_yr8bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yr8bp"]
+size = Vector2(180, 40)
+
+[node name="Ground" type="StaticBody2D"]
+script = ExtResource("1_yr8bp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_38vp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yr8bp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(9, 2)

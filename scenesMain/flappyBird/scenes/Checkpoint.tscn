@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://brmd4qufmuias"]
+
+[ext_resource type="Script" uid="uid://bk8i12ewrgyqt" path="res://scenesMain/flappyBird/scripts/Checkpoint.cs" id="1_h8vsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if5ft"]
+size = Vector2(0.875, 173)
+
+[node name="Checkpoint" type="Node2D"]
+script = ExtResource("1_h8vsu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -73)
+shape = SubResource("RectangleShape2D_if5ft")

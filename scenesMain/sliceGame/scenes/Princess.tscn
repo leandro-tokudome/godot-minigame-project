@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://j4l4u6ylppxb"]
+
+[ext_resource type="Script" uid="uid://ch5paipuaf3tg" path="res://scenesMain/sliceGame/scripts/Princess.cs" id="1_66nb8"]
+[ext_resource type="Texture2D" uid="uid://c7ycht4o06rr" path="res://scenesMain/sliceGame/sprites/misc/princess-dead.png" id="2_5thjv"]
+[ext_resource type="Texture2D" uid="uid://0720ex046hhr" path="res://scenesMain/sliceGame/sprites/misc/princess-idle-1.png" id="3_gegiq"]
+[ext_resource type="Texture2D" uid="uid://c4q5mfwy73sed" path="res://scenesMain/sliceGame/sprites/misc/princess-idle-2.png" id="4_ohdqd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocvus"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5thjv")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gegiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ohdqd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Princess" type="Node2D"]
+script = ExtResource("1_66nb8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ocvus")
+animation = &"dead"

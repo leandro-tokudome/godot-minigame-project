@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bduhnh2hyeq8n"]
+
+[ext_resource type="Script" uid="uid://bgm2kryk3eh5s" path="res://scenesGeneric/scripts/OverralScoreboard.cs" id="1_0jmh8"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="1_ssk6m"]
+
+[node name="OverralScoreboard" type="Node2D"]
+script = ExtResource("1_0jmh8")
+
+[node name="Scoreboard1" parent="." instance=ExtResource("1_ssk6m")]
+position = Vector2(68, 36)
+PlayerSprite = "player1"
+
+[node name="Scoreboard2" parent="." instance=ExtResource("1_ssk6m")]
+position = Vector2(188, 36)
+PlayerSprite = "player2"
+
+[node name="Scoreboard3" parent="." instance=ExtResource("1_ssk6m")]
+position = Vector2(68, 106)
+PlayerSprite = "player3"
+
+[node name="Scoreboard4" parent="." instance=ExtResource("1_ssk6m")]
+position = Vector2(188, 106)
+PlayerSprite = "player4"

@@ -1,0 +1,82 @@
+[gd_scene load_steps=17 format=3 uid="uid://c6ssisp57vv4p"]
+
+[ext_resource type="Texture2D" uid="uid://bstbvl1813k1f" path="res://scenesMain/sliceGame/sprites/player1/player1-action-1.png" id="1_ncknm"]
+[ext_resource type="Script" uid="uid://dubmbd053bj78" path="res://scenesMain/sliceGame/scripts/Player.cs" id="1_ntj3n"]
+[ext_resource type="Texture2D" uid="uid://df2bwv1se0wfk" path="res://scenesMain/sliceGame/sprites/player1/player1-action-2.png" id="2_ntj3n"]
+[ext_resource type="Texture2D" uid="uid://b4xedmb0cj71r" path="res://scenesMain/sliceGame/sprites/player1/player1-action-3.png" id="3_guunt"]
+[ext_resource type="Texture2D" uid="uid://bii0gqy0vdhar" path="res://scenesMain/sliceGame/sprites/player1/player1-action-4.png" id="4_xplom"]
+[ext_resource type="Texture2D" uid="uid://bdf5yvmv77o3n" path="res://scenesMain/sliceGame/sprites/player1/player1-action-5.png" id="5_tarpc"]
+[ext_resource type="Texture2D" uid="uid://bxckxp0tnf6ew" path="res://scenesMain/sliceGame/sprites/player1/player1-action-6.png" id="6_2xo1o"]
+[ext_resource type="Texture2D" uid="uid://bw00hmwmat2bu" path="res://scenesMain/sliceGame/sprites/player1/player1-action-7.png" id="7_lpk3k"]
+[ext_resource type="Texture2D" uid="uid://bdrsn0pywa2pa" path="res://scenesMain/sliceGame/sprites/player1/player1-action-8.png" id="8_3ty8j"]
+[ext_resource type="Texture2D" uid="uid://sdnuuwky83ay" path="res://scenesMain/sliceGame/sprites/player1/player1-action-9.png" id="9_mfuyd"]
+[ext_resource type="Texture2D" uid="uid://b1b21el0utyn6" path="res://scenesMain/sliceGame/sprites/player1/player1-action-10.png" id="10_bh4tm"]
+[ext_resource type="Texture2D" uid="uid://b1rgi2snmdtft" path="res://scenesMain/sliceGame/sprites/player1/player1-idle-1.png" id="11_6mpdc"]
+[ext_resource type="Texture2D" uid="uid://dtgejryqrvy1q" path="res://scenesMain/sliceGame/sprites/player1/player1-idle-2.png" id="12_3ickk"]
+[ext_resource type="Texture2D" uid="uid://cxh2o48erh38v" path="res://scenesMain/sliceGame/sprites/player1/player1-idle-3.png" id="13_eql38"]
+[ext_resource type="Texture2D" uid="uid://b3lj3upkkx1l5" path="res://scenesMain/sliceGame/sprites/player1/player1-idle-4.png" id="14_ski4t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s8ij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ncknm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ntj3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_guunt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xplom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tarpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2xo1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lpk3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3ty8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mfuyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bh4tm")
+}],
+"loop": false,
+"name": &"action",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_6mpdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3ickk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_eql38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ski4t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_ntj3n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0s8ij")
+animation = &"action"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-4, -13)

@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8hneuxi7lmsr"]
+
+[ext_resource type="Script" uid="uid://ccuitutm2ffea" path="res://scenesMain/sliceGame/scripts/Main.cs" id="1_lalwp"]
+[ext_resource type="PackedScene" uid="uid://c6ssisp57vv4p" path="res://scenesMain/sliceGame/scenes/Player1.tscn" id="2_m8qah"]
+[ext_resource type="PackedScene" uid="uid://bix6kwduwrqim" path="res://scenesMain/sliceGame/scenes/Player2.tscn" id="3_s6rp7"]
+[ext_resource type="PackedScene" uid="uid://bffpgr13x7bro" path="res://scenesMain/sliceGame/scenes/Player3.tscn" id="4_xv7jo"]
+[ext_resource type="PackedScene" uid="uid://e4piid3b1pgk" path="res://scenesMain/sliceGame/scenes/Player4.tscn" id="5_781x6"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="6_ltu0k"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_lalwp")
+ShowTimer = true
+GameTime = 60
+Players = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 72)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(128, 72)
+
+[node name="Player1" parent="." instance=ExtResource("2_m8qah")]
+position = Vector2(106, 51)
+RelativeScoreboard = "Scoreboard1"
+ActionButton = "action_p1"
+ActionCooldown = 0.25
+
+[node name="Player2" parent="." instance=ExtResource("3_s6rp7")]
+position = Vector2(150, 51)
+RelativeScoreboard = "Scoreboard2"
+ActionButton = "action_p2"
+ActionCooldown = 0.25
+
+[node name="Player3" parent="." instance=ExtResource("4_xv7jo")]
+position = Vector2(106, 71)
+RelativeScoreboard = "Scoreboard3"
+ActionButton = "action_p3"
+ActionCooldown = 0.25
+
+[node name="Player4" parent="." instance=ExtResource("5_781x6")]
+position = Vector2(150, 71)
+RelativeScoreboard = "Scoreboard4"
+ActionButton = "action_p4"
+ActionCooldown = 0.25
+
+[node name="Scoreboard1" parent="." instance=ExtResource("6_ltu0k")]
+position = Vector2(31, 27)
+PlayerSprite = "player1"
+
+[node name="Scoreboard2" parent="." instance=ExtResource("6_ltu0k")]
+position = Vector2(225, 27)
+PlayerSprite = "player2"
+
+[node name="Scoreboard3" parent="." instance=ExtResource("6_ltu0k")]
+position = Vector2(31, 116)
+PlayerSprite = "player3"
+
+[node name="Scoreboard4" parent="." instance=ExtResource("6_ltu0k")]
+position = Vector2(225, 116)
+PlayerSprite = "player4"

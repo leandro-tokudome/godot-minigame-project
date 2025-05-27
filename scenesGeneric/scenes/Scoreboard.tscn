@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://s4yuxijen3ew"]
+
+[ext_resource type="Script" uid="uid://dhjdfsj8sl10n" path="res://scenesGeneric/scripts/Scoreboard.cs" id="1_6eshc"]
+[ext_resource type="FontFile" uid="uid://cjv8ij2wdlfjx" path="res://font/Perfect DOS VGA 437.ttf" id="1_hq0uf"]
+[ext_resource type="Texture2D" uid="uid://bqhujeq4wm304" path="res://scenesGeneric/sprites/scoreboard-player1.png" id="2_6eshc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bojm5"]
+font = ExtResource("1_hq0uf")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Scoreboard" type="Node2D"]
+script = ExtResource("1_6eshc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6eshc")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -7.0
+offset_right = 19.0
+offset_bottom = 9.0
+text = "Score"
+label_settings = SubResource("LabelSettings_bojm5")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

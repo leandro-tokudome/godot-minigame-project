@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd7cswx7wukos"]
+
+[ext_resource type="Script" uid="uid://b1je0n761tg55" path="res://scenesGeneric/scripts/ScoreTextFloat.cs" id="1_pa4fr"]
+[ext_resource type="FontFile" uid="uid://cjv8ij2wdlfjx" path="res://font/Perfect DOS VGA 437.ttf" id="2_p31xc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v1511"]
+font = ExtResource("2_p31xc")
+
+[node name="ScoreTextFloat" type="Node2D"]
+position = Vector2(-18, -8)
+script = ExtResource("1_pa4fr")
+Speed = 30.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 36.0
+offset_bottom = 16.0
+text = "Test"
+label_settings = SubResource("LabelSettings_v1511")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

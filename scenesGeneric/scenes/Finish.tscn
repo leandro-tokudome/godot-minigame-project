@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://wkaddhe1cyec"]
+
+[ext_resource type="Texture2D" uid="uid://081enod76tq5" path="res://scenesGeneric/sprites/countdownBackground.png" id="1_i08x7"]
+[ext_resource type="Texture2D" uid="uid://ccw1ksmfwdcsa" path="res://scenesGeneric/sprites/finish.png" id="2_adoc0"]
+
+[node name="Finish" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_i08x7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_adoc0")

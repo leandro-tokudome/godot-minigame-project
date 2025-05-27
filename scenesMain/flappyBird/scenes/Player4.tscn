@@ -1,0 +1,83 @@
+[gd_scene load_steps=15 format=3 uid="uid://bvoeq7qyqplgo"]
+
+[ext_resource type="Texture2D" uid="uid://ckb8lb1uysflq" path="res://scenesMain/flappyBird/sprites/player4/player4-action-1.png" id="1_s4xdr"]
+[ext_resource type="Script" uid="uid://dylafngjpu04w" path="res://scenesMain/flappyBird/scripts/Player.cs" id="1_tayhj"]
+[ext_resource type="Texture2D" uid="uid://cxn385n6w3xsk" path="res://scenesMain/flappyBird/sprites/player4/player4-action-2.png" id="2_tayhj"]
+[ext_resource type="Texture2D" uid="uid://71kcfoy1pla1" path="res://scenesMain/flappyBird/sprites/player4/player4-action-3.png" id="3_oi7vv"]
+[ext_resource type="Texture2D" uid="uid://cabyxcob65j7q" path="res://scenesMain/flappyBird/sprites/player4/player4-action-4.png" id="4_urwj1"]
+[ext_resource type="Texture2D" uid="uid://c51lfs34cbxen" path="res://scenesMain/flappyBird/sprites/player4/player4-action-5.png" id="5_sjyr4"]
+[ext_resource type="Texture2D" uid="uid://cvh3ooksli5xo" path="res://scenesMain/flappyBird/sprites/misc/playerDeath/player-death-1.png" id="7_x5u7g"]
+[ext_resource type="Texture2D" uid="uid://77nplda1me8m" path="res://scenesMain/flappyBird/sprites/misc/playerDeath/player-death-2.png" id="8_ui0vr"]
+[ext_resource type="Texture2D" uid="uid://c4k5dvw8n63b0" path="res://scenesMain/flappyBird/sprites/misc/playerDeath/player-death-3.png" id="9_jqcyi"]
+[ext_resource type="Texture2D" uid="uid://tar0dsn8ue63" path="res://scenesMain/flappyBird/sprites/misc/playerDeath/player-death-4.png" id="10_bgkhc"]
+[ext_resource type="Texture2D" uid="uid://bpwv4hbdhw5cn" path="res://scenesMain/flappyBird/sprites/misc/playerDeath/player-death-5.png" id="11_fyi52"]
+[ext_resource type="Texture2D" uid="uid://b2pig16gitmma" path="res://scenesMain/flappyBird/sprites/misc/playerDeath/player-death-6.png" id="12_4hwpl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgdvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s4xdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tayhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oi7vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_urwj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sjyr4")
+}],
+"loop": false,
+"name": &"action",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s4xdr")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x5u7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ui0vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jqcyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bgkhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fyi52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4hwpl")
+}],
+"loop": false,
+"name": &"player_death",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tayhj"]
+height = 22.0
+
+[node name="Player4" type="CharacterBody2D"]
+script = ExtResource("1_tayhj")
+ActionButton = "action_p4"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pgdvq")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_tayhj")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6n0mgpu8p358"]
+
+[ext_resource type="Texture2D" uid="uid://cvloas16ssdie" path="res://scenesMain/flappyBird/sprites/misc/asteroid.png" id="1_0dbyx"]
+[ext_resource type="Script" uid="uid://ck4jv270tuaxf" path="res://scenesMain/flappyBird/scripts/Asteroid.cs" id="1_h21ue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h21ue"]
+radius = 15.0
+
+[node name="Asteroid" type="CharacterBody2D"]
+script = ExtResource("1_h21ue")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0dbyx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h21ue")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1.5, 1.5)

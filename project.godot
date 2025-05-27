@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="test"
+config/name="project-minigame"
 run/main_scene="uid://dtefymi0at7sv"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
@@ -24,7 +24,7 @@ window/stretch/mode="canvas_items"
 
 [dotnet]
 
-project/assembly_name="test"
+project/assembly_name="project-minigame"
 
 [input]
 

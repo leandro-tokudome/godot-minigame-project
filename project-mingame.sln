@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test.csproj", "{89DF304F-EC19-45EB-BC04-43B8808E6EFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project-minigame", "project-minigame.csproj", "{89DF304F-EC19-45EB-BC04-43B8808E6EFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -23,11 +23,11 @@ public partial class Checkpoint : Node2D
 		{
 			player.InGameScore++;
 
-			if (_main.PlayersAlive.Count == 1)
-			{
-				_main.WinnerPlayers.Add(_main.PlayersAlive[0]);
+			if (_main.PlayersAlive.Count == 1 && player.InGameScore == _main.HighScore + 1)
 				_main.FinishGame();
-			}
+
+			if (_main.LeaderPlayer == player && player.InGameScore > _main.HighScore)
+				_main.HighScore = player.InGameScore;
 		}
 	}
 }

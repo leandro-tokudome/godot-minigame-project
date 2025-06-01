@@ -11,6 +11,9 @@ public partial class Main : MainAbstract
 	private const float FirstGroundX = 90;
 	private const float GroundHeight = 156f;
 	private float AsteroidHeightGap = 0f;
+	public Player LeaderPlayer;
+	public int HighScore = 0;
+	[Export]
 	private float AsteroidWallGap = 13.5f;
 	private RandomNumberGenerator Rng;
 	private Timer _asteroidSpawnTimer;
@@ -27,6 +30,8 @@ public partial class Main : MainAbstract
 		_asteroid = GD.Load<PackedScene>("scenesMain/flappyBird/scenes/Asteroid.tscn");
 		_checkpoint = GD.Load<PackedScene>("scenesMain/flappyBird/scenes/Checkpoint.tscn");
 		_asteroidSpawnTimer = GetNode<Timer>("Timer");
+
+		LeaderPlayer = GetNode<Player>("Player1");
 
 		_asteroidSpawnTimer.Timeout += OnTimeout;
 
@@ -76,6 +81,20 @@ public partial class Main : MainAbstract
 		PlayersAlive.Remove(playerName);
 		if (PlayersAlive.Count == 0)
 			FinishGame();
+
+		for (var index = 1; index <= Players; index++)
+		{
+			Player player = GetNodeOrNull<Player>($"Player{index}");
+			if (player is null)
+				continue;
+
+			if (player.IsAlive)
+			{
+				LeaderPlayer = player;
+				break;
+			}
+		}
+
 	}
 
 	private void OnTimeout()
@@ -101,5 +120,13 @@ public partial class Main : MainAbstract
 		checkpoint.GlobalPosition = new Vector2(271 + 13f + (((float)_asteroidSpawnTimer.WaitTime + Asteroid.AsteroidVelocityX) / 2), GroundHeight - 20 - 13);
 
 		AddChild(checkpoint);
+	}
+
+	public override void CountWin()
+	{
+		if (FinishedByTime)
+			WinnerPlayers = PlayersAlive;
+		else
+			CountWinMostPointed();
 	}
 }

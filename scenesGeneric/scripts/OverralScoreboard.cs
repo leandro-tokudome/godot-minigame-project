@@ -14,7 +14,8 @@ public partial class OverralScoreboard : Node2D
 		{
 			ScoreboardDic.Add($"Player{index}", $"Scoreboard{index}");
 
-			if (supportIndex > Players) {
+			if (supportIndex > Players)
+			{
 				Scoreboard scoreboard = GetNode<Scoreboard>($"Scoreboard{supportIndex}");
 				scoreboard.QueueFree();
 				supportIndex--;

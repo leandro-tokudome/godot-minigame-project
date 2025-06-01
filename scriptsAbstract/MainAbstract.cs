@@ -12,6 +12,7 @@ public partial class MainAbstract : Node2D
 	public int Players = 2;
 	public readonly List<IPlayer> PlayerProperties = [];
 	public List<string> WinnerPlayers = [];
+	public bool FinishedByTime = false;
 
 	private PackedScene _countdown;
 	private PackedScene _finish;
@@ -75,6 +76,18 @@ public partial class MainAbstract : Node2D
 		timer.Position = new Vector2(_screenSize.X / 2.0f, 10);
 	}
 
+	private void OnGameTimerFinish()
+	{
+		FinishedByTime = true;
+		FinishGame();
+	}
+
+	private void OnCountdownFinish()
+		=> GetTree().Paused = false;
+
+	public virtual void CountWin()
+		=> CountWinMostPointed();
+
 	public void CountWinMostPointed()
 	{
 		int greaterPoint = int.MinValue;
@@ -85,13 +98,4 @@ public partial class MainAbstract : Node2D
 		foreach (var player in PlayerProperties)
 			if (player.InGameScore == greaterPoint) WinnerPlayers.Add(player.PlayerName);
 	}
-
-	private void OnGameTimerFinish()
-		=> FinishGame();
-
-	private void OnCountdownFinish()
-		=> GetTree().Paused = false;
-
-	public virtual void CountWin()
-		=> CountWinMostPointed();
 }

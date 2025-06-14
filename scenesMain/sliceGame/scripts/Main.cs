@@ -2,9 +2,10 @@ using System;
 using Godot;
 
 namespace SliceGame;
+
 public partial class Main : MainAbstract
 {
-	private readonly Random Random = new();
+	private RandomNumberGenerator Rng;
 	private Timer CanSpawnTimer;
 	private Timer TrySpawnTimer;
 	private Timer ForceSpawnTimer;
@@ -29,6 +30,9 @@ public partial class Main : MainAbstract
 		TrySpawnTimer.Timeout += TrySpawn;
 		ForceSpawnTimer.Timeout += ForceSpawn;
 
+		Rng = new();
+		Rng.Randomize();
+
 		AddChild(CanSpawnTimer);
 		AddChild(TrySpawnTimer);
 		AddChild(ForceSpawnTimer);
@@ -37,7 +41,7 @@ public partial class Main : MainAbstract
 
 	public void TrySpawn()
 	{
-		if (Random.NextDouble() <= 0.02)
+		if (Rng.Randf() <= 0.02)
 			SpawnNpc();
 	}
 
@@ -46,7 +50,7 @@ public partial class Main : MainAbstract
 
 	public void SpawnNpc()
 	{
-		PackedScene chosenNpc = Random.NextDouble() <= 0.35 ? _princess : _orc;
+		PackedScene chosenNpc = Rng.Randf() <= 0.35 ? _princess : _orc;
 		CurrentNpc = chosenNpc.Instantiate<Node2D>();
 		CurrentNpc.Position = _marker2d.GlobalPosition;
 

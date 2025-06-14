@@ -66,17 +66,18 @@ public partial class MainAbstract : Node2D
 		CountWin();
 	}
 
-	public void ShowGameTimer()
+	public void ShowGameTimer(int? gameTime = null)
 	{
 		GameTimer timer = _timer.Instantiate<GameTimer>();
-		timer.GameTime = GameTime;
+		timer.Name = "GameTimer";
+		timer.GameTime = gameTime ?? GameTime;
 		timer.GameTimerFinished += OnGameTimerFinish;
 		AddChild(timer);
 
 		timer.Position = new Vector2(_screenSize.X / 2.0f, 10);
 	}
 
-	private void OnGameTimerFinish()
+	public virtual void OnGameTimerFinish()
 	{
 		FinishedByTime = true;
 		FinishGame();

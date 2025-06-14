@@ -26,6 +26,8 @@ public partial class Main : MainAbstract
 		base._Ready();
 
 		Rng = new();
+		Rng.Randomize();
+
 		_ground = GD.Load<PackedScene>("scenesMain/flappyBird/scenes/Ground.tscn");
 		_asteroid = GD.Load<PackedScene>("scenesMain/flappyBird/scenes/Asteroid.tscn");
 		_checkpoint = GD.Load<PackedScene>("scenesMain/flappyBird/scenes/Checkpoint.tscn");

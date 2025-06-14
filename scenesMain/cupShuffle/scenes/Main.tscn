@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6qv7djr76gmm"]
+
+[ext_resource type="PackedScene" uid="uid://doxmkk4a1exco" path="res://scenesMain/cupShuffle/scenes/Cups.tscn" id="1_kos4f"]
+[ext_resource type="Script" uid="uid://dnhavh4v8wfie" path="res://scenesMain/cupShuffle/scripts/Main.cs" id="1_qp7dv"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="3_rbwgr"]
+[ext_resource type="PackedScene" uid="uid://bihuel0soqxfr" path="res://scenesMain/cupShuffle/scenes/Player1.tscn" id="4_uyjuk"]
+[ext_resource type="PackedScene" uid="uid://dy23v2kpx4dk7" path="res://scenesMain/cupShuffle/scenes/Player2.tscn" id="5_rho7k"]
+[ext_resource type="PackedScene" uid="uid://d0l6khv8174k4" path="res://scenesMain/cupShuffle/scenes/Player3.tscn" id="6_c67sp"]
+[ext_resource type="PackedScene" uid="uid://f2uoygqvhlmw" path="res://scenesMain/cupShuffle/scenes/Player4.tscn" id="7_f85v8"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qp7dv")
+Players = 3
+
+[node name="Cups" parent="." instance=ExtResource("1_kos4f")]
+position = Vector2(128, 72)
+
+[node name="Player1BallMarker" type="Marker2D" parent="."]
+position = Vector2(81.5, 93)
+
+[node name="Player2BallMarker" type="Marker2D" parent="."]
+position = Vector2(112.5, 93)
+
+[node name="Player3BallMarker" type="Marker2D" parent="."]
+position = Vector2(143.5, 93)
+
+[node name="Player4BallMarker" type="Marker2D" parent="."]
+position = Vector2(174.5, 93)
+
+[node name="Scoreboard1" parent="." instance=ExtResource("3_rbwgr")]
+position = Vector2(26, 23)
+PlayerSprite = "player1"
+
+[node name="Scoreboard2" parent="." instance=ExtResource("3_rbwgr")]
+position = Vector2(230, 23)
+PlayerSprite = "player2"
+
+[node name="Scoreboard3" parent="." instance=ExtResource("3_rbwgr")]
+position = Vector2(26, 121)
+PlayerSprite = "player3"
+
+[node name="Scoreboard4" parent="." instance=ExtResource("3_rbwgr")]
+position = Vector2(230, 121)
+PlayerSprite = "player4"
+
+[node name="Player1" parent="." instance=ExtResource("4_uyjuk")]
+ActionButton = "action_p1"
+RelativeScoreboard = "Scoreboard1"
+
+[node name="Player2" parent="." instance=ExtResource("5_rho7k")]
+ActionButton = "action_p2"
+RelativeScoreboard = "Scoreboard2"
+
+[node name="Player3" parent="." instance=ExtResource("6_c67sp")]
+ActionButton = "action_p3"
+RelativeScoreboard = "Scoreboard3"
+
+[node name="Player4" parent="." instance=ExtResource("7_f85v8")]
+ActionButton = "action_p4"
+RelativeScoreboard = "Scoreboard4"
+
+[node name="Player1ArrowMarker" type="Marker2D" parent="."]
+position = Vector2(81.5, 63)
+
+[node name="Player2ArrowMarker" type="Marker2D" parent="."]
+position = Vector2(81.5, 58)
+
+[node name="Player3ArrowMarker" type="Marker2D" parent="."]
+position = Vector2(81.5, 53)
+
+[node name="Player4ArrowMarker" type="Marker2D" parent="."]
+position = Vector2(81.5, 48)
+
+[node name="Player1FloatScore" type="Marker2D" parent="."]
+position = Vector2(45, 38)
+
+[node name="Player2FloatScore" type="Marker2D" parent="."]
+position = Vector2(211, 38)
+
+[node name="Player3FloatScore" type="Marker2D" parent="."]
+position = Vector2(45, 106)
+
+[node name="Player4FloatScore" type="Marker2D" parent="."]
+position = Vector2(211, 106)

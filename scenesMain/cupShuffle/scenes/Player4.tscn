@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://f2uoygqvhlmw"]
+
+[ext_resource type="Script" uid="uid://b1gujs7se4e4y" path="res://scenesMain/cupShuffle/scripts/Player.cs" id="1_h3roi"]
+
+[node name="Player4" type="Node2D"]
+script = ExtResource("1_h3roi")

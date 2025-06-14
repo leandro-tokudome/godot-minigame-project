@@ -21,27 +21,27 @@ position = Vector2(128, 72)
 
 [node name="Player1" parent="." instance=ExtResource("2_m8qah")]
 position = Vector2(106, 51)
-RelativeScoreboard = "Scoreboard1"
 ActionButton = "action_p1"
 ActionCooldown = 0.25
+RelativeScoreboard = "Scoreboard1"
 
 [node name="Player2" parent="." instance=ExtResource("3_s6rp7")]
 position = Vector2(150, 51)
-RelativeScoreboard = "Scoreboard2"
 ActionButton = "action_p2"
 ActionCooldown = 0.25
+RelativeScoreboard = "Scoreboard2"
 
 [node name="Player3" parent="." instance=ExtResource("4_xv7jo")]
 position = Vector2(106, 71)
-RelativeScoreboard = "Scoreboard3"
 ActionButton = "action_p3"
 ActionCooldown = 0.25
+RelativeScoreboard = "Scoreboard3"
 
 [node name="Player4" parent="." instance=ExtResource("5_781x6")]
 position = Vector2(150, 71)
-RelativeScoreboard = "Scoreboard4"
 ActionButton = "action_p4"
 ActionCooldown = 0.25
+RelativeScoreboard = "Scoreboard4"
 
 [node name="Scoreboard1" parent="." instance=ExtResource("6_ltu0k")]
 position = Vector2(31, 27)

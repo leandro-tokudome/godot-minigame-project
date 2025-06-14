@@ -9,19 +9,18 @@ public abstract partial class PlayerNodeAbstract : Node2D, IPlayer
 	[Export]
 	public double ActionCooldown { get; set; } = 0;
 	public bool IsAlive { get; set; } = true;
-
 	[Export]
-	public bool HasPhysic { get; set; } = false;
-	[Export]
-	public float GravityVelocity { get; set; } = 0f;
-	public float VelocityY { get; set; } = 0f;
-	public float VelocityX { get; set; } = 0f;
+	public string RelativeScoreboard = null;
 
+	private Scoreboard _scoreboard;
 	private Timer CooldownTimer;
 
 	public override void _Ready()
 	{
 		PlayerName = Name;
+
+		if (!string.IsNullOrEmpty(RelativeScoreboard))
+			_scoreboard = GetParent().GetNode<Scoreboard>(RelativeScoreboard);
 
 		CooldownTimer = new Timer
 		{
@@ -31,15 +30,6 @@ public abstract partial class PlayerNodeAbstract : Node2D, IPlayer
 		};
 
 		AddChild(CooldownTimer);
-	}
-
-	public override void _PhysicsProcess(double delta)
-	{
-		if (HasPhysic)
-		{
-			VelocityY += GravityVelocity * (float)delta;
-			Position += new Vector2(VelocityX * (float)delta, VelocityY * (float)delta);
-		}
 	}
 
 	public override void _Input(InputEvent @event)
@@ -55,6 +45,9 @@ public abstract partial class PlayerNodeAbstract : Node2D, IPlayer
 				CooldownTimer.Start();
 		}
 	}
+
+	public void UpdateScoreboardScore(int newScore)
+		=> _scoreboard.UpdateScore(newScore);
 
 	public virtual void Action() { }
 }

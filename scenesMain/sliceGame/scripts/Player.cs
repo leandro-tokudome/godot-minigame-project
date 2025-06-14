@@ -8,9 +8,6 @@ public partial class Player : PlayerNodeAbstract
 	private AnimatedSprite2D _animatedSprite;
 	private Marker2D _marker2d;
 	private PackedScene _scoreTextFloat;
-	private Scoreboard _scoreboard;
-	[Export]
-	private string RelativeScoreboard;
 
 	public override void _Ready()
 	{
@@ -24,8 +21,6 @@ public partial class Player : PlayerNodeAbstract
 		_marker2d = GetNode<Marker2D>("Marker2D");
 
 		_scoreTextFloat = GD.Load<PackedScene>("scenesGeneric/scenes/ScoreTextFloat.tscn");
-
-		_scoreboard = GetParent().GetNode<Scoreboard>(RelativeScoreboard);
 	}
 
 	public override void Action()
@@ -55,7 +50,7 @@ public partial class Player : PlayerNodeAbstract
 			AddChild(scoreTextFloat);
 
 			InGameScore += score;
-			_scoreboard.UpdateScore(InGameScore);
+			UpdateScoreboardScore(InGameScore);
 		}
 
 	}

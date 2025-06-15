@@ -29,10 +29,9 @@ public partial class Player : PlayerNodeAbstract
 
 		NpcAbstract npc = _main.CurrentNpc as NpcAbstract;
 
-		int score = 0;
 		if (npc != null)
 		{
-			score = npc.Die();
+			var score = npc.Die();
 
 			ScoreTextFloat scoreTextFloat = _scoreTextFloat.Instantiate<ScoreTextFloat>();
 			scoreTextFloat.Position = _marker2d.Position;
@@ -41,10 +40,10 @@ public partial class Player : PlayerNodeAbstract
 				scoreTextFloat.DisplayText = "-2";
 				scoreTextFloat.IsRed = true;
 			}
-			else
-			{
+			else if (score == 1)
 				scoreTextFloat.DisplayText = "+1";
-			}
+			else
+				scoreTextFloat.DisplayText = "+2";
 
 			scoreTextFloat.ScaleDisplay = 0.5f;
 			AddChild(scoreTextFloat);

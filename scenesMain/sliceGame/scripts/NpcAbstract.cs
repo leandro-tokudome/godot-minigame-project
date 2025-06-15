@@ -59,6 +59,9 @@ public abstract partial class NpcAbstract : Node2D
         _main.CurrentNpc = null;
         _AnimatedSprite.Play("dead");
         QueueFreeTimerAfterDeath.Start();
-        return this is Princess ? -2 : 1;
+        return
+            this is Princess ? -2 :
+            this is Orc ? 1 :
+            2;
     }
 }

@@ -11,6 +11,7 @@ public partial class Main : MainAbstract
 	private Timer ForceSpawnTimer;
 	private Marker2D _marker2d;
 	private PackedScene _orc;
+	private PackedScene _chiefOrc;
 	private PackedScene _princess;
 	public Node2D CurrentNpc;
 
@@ -20,6 +21,7 @@ public partial class Main : MainAbstract
 
 		_marker2d = GetNode<Marker2D>("SpawnPoint");
 		_orc = GD.Load<PackedScene>("scenesMain/sliceGame/scenes/Orc.tscn");
+		_chiefOrc = GD.Load<PackedScene>("scenesMain/sliceGame/scenes/ChiefOrc.tscn");
 		_princess = GD.Load<PackedScene>("scenesMain/sliceGame/scenes/Princess.tscn");
 
 		CanSpawnTimer = new Timer { WaitTime = 0.7, OneShot = true };
@@ -50,7 +52,11 @@ public partial class Main : MainAbstract
 
 	public void SpawnNpc()
 	{
-		PackedScene chosenNpc = Rng.Randf() <= 0.35 ? _princess : _orc;
+		var randomNumber = Rng.Randf();
+		PackedScene chosenNpc =
+			randomNumber <= 0.30 ? _princess :
+			randomNumber > 0.30 && randomNumber <= 0.85 ? _orc :
+			_chiefOrc;
 		CurrentNpc = chosenNpc.Instantiate<Node2D>();
 		CurrentNpc.Position = _marker2d.GlobalPosition;
 

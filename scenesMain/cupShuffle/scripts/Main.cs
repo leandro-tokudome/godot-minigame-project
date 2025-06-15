@@ -159,8 +159,8 @@ public partial class Main : MainAbstract
 		FramesVelocity =
 			Round == 1 ? 1.0f :
 			Round == 2 ? 1.7f :
-			Round == 3 ? 2.5f :
-			Round == 4 ? 3.15f :
+			Round == 3 ? 2.4f :
+			Round == 4 ? 2.95f :
 			1.0f;
 		ChangeAnimationVelocity(FramesVelocity);
 
@@ -269,7 +269,7 @@ public partial class Main : MainAbstract
 				scoreTextFloat.DisplayText = $"+{pointGained}";
 				scoreTextFloat.Position = floatScore.GlobalPosition;
 
-				scoreTextFloat.ScaleDisplay = 0.5f;
+				scoreTextFloat.ScaleDisplay = 0.75f;
 				AddChild(scoreTextFloat);
 
 				player.UpdateScoreboardScore(player.InGameScore);

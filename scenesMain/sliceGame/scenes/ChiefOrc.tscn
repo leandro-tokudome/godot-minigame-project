@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdq2ww4f5i3xv"]
+
+[ext_resource type="Texture2D" uid="uid://dqvrqqltpx7bn" path="res://scenesMain/sliceGame/sprites/misc/orc-dead.png" id="1_a5yyw"]
+[ext_resource type="Script" uid="uid://se1ef23sp3dy" path="res://scenesMain/sliceGame/scripts/ChiefOrc.cs" id="1_p1dmb"]
+[ext_resource type="Texture2D" uid="uid://dsixfw0i1v8je" path="res://scenesMain/sliceGame/sprites/misc/chief-orc-idle-1.png" id="1_plv4j"]
+[ext_resource type="Texture2D" uid="uid://ct3qc6qtcr2k3" path="res://scenesMain/sliceGame/sprites/misc/chief-orc-idle-2.png" id="2_a5yyw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1dmb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a5yyw")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_plv4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a5yyw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="ChiefOrc" type="Node2D"]
+script = ExtResource("1_p1dmb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p1dmb")
+animation = &"dead"

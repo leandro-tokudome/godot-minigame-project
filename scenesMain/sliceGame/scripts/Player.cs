@@ -43,7 +43,10 @@ public partial class Player : PlayerNodeAbstract
 			else if (score == 1)
 				scoreTextFloat.DisplayText = "+1";
 			else
+			{
 				scoreTextFloat.DisplayText = "+2";
+				scoreTextFloat.LabelColor = new Color(1, 1, 0);
+			}
 
 			scoreTextFloat.ScaleDisplay = 0.5f;
 			AddChild(scoreTextFloat);
@@ -51,7 +54,6 @@ public partial class Player : PlayerNodeAbstract
 			InGameScore += score;
 			UpdateScoreboardScore(InGameScore);
 		}
-
 	}
 
 	public void OnAnimationFinished()

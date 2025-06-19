@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://7keshhhbt624"]
+
+[ext_resource type="Script" uid="uid://ehhd4apk84ur" path="res://scenesMain/meterGame/scripts/Player.cs" id="1_40ljb"]
+[ext_resource type="Texture2D" uid="uid://ctvlud1xs2g5a" path="res://scenesMain/meterGame/sprites/misc/meter.png" id="1_x1agv"]
+
+[node name="Player2" type="Node2D"]
+script = ExtResource("1_40ljb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x1agv")

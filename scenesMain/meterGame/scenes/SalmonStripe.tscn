@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4u4rk172adau"]
+
+[ext_resource type="Texture2D" uid="uid://cwcvqtwlh18ob" path="res://scenesMain/meterGame/sprites/misc/salmonStripe.png" id="1_cx47n"]
+
+[node name="SalmonStripe" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cx47n")

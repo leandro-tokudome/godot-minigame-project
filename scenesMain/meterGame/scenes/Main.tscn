@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://3whr7lt4845r"]
+
+[ext_resource type="Script" uid="uid://dngfef6lu5v8v" path="res://scenesMain/meterGame/scripts/Main.cs" id="1_m0psu"]
+[ext_resource type="PackedScene" uid="uid://jnjl438cyco1" path="res://scenesMain/meterGame/scenes/Player1.tscn" id="1_yrkbt"]
+[ext_resource type="PackedScene" uid="uid://7keshhhbt624" path="res://scenesMain/meterGame/scenes/Player2.tscn" id="2_m0psu"]
+[ext_resource type="PackedScene" uid="uid://ct1vjuyp0168o" path="res://scenesMain/meterGame/scenes/Player3.tscn" id="3_fhhhf"]
+[ext_resource type="PackedScene" uid="uid://b6ju4mru73ol6" path="res://scenesMain/meterGame/scenes/Player4.tscn" id="4_7ipyh"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="6_fhhhf"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_m0psu")
+ShowTimer = true
+GameTime = 60
+Players = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 72)
+
+[node name="Player1" parent="." instance=ExtResource("1_yrkbt")]
+position = Vector2(128, 27)
+ActionButton = "action_p1"
+RelativeScoreboard = "Scoreboard1"
+
+[node name="Player2" parent="." instance=ExtResource("2_m0psu")]
+position = Vector2(128, 57)
+ActionButton = "action_p2"
+RelativeScoreboard = "Scoreboard2"
+
+[node name="Player3" parent="." instance=ExtResource("3_fhhhf")]
+position = Vector2(128, 87)
+ActionButton = "action_p3"
+RelativeScoreboard = "Scoreboard3"
+
+[node name="Player4" parent="." instance=ExtResource("4_7ipyh")]
+position = Vector2(128, 117)
+ActionButton = "action_p4"
+RelativeScoreboard = "Scoreboard4"
+
+[node name="Scoreboard1" parent="." instance=ExtResource("6_fhhhf")]
+position = Vector2(227, 27)
+scale = Vector2(0.85, 0.85)
+PlayerSprite = "player1"
+ScaleDisplay = 0.85
+
+[node name="Scoreboard2" parent="." instance=ExtResource("6_fhhhf")]
+position = Vector2(227, 57)
+scale = Vector2(0.85, 0.85)
+PlayerSprite = "player2"
+ScaleDisplay = 0.85
+
+[node name="Scoreboard3" parent="." instance=ExtResource("6_fhhhf")]
+position = Vector2(227, 87)
+scale = Vector2(0.85, 0.85)
+PlayerSprite = "player3"
+ScaleDisplay = 0.85
+
+[node name="Scoreboard4" parent="." instance=ExtResource("6_fhhhf")]
+position = Vector2(227, 117)
+scale = Vector2(0.85, 0.85)
+PlayerSprite = "player4"
+ScaleDisplay = 0.85

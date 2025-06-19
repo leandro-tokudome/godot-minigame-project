@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgkyqxttilcxt"]
+
+[ext_resource type="Texture2D" uid="uid://dd8srm34n7fxd" path="res://scenesMain/meterGame/sprites/misc/orangeStripe.png" id="1_p6tf5"]
+
+[node name="OrangeStripe" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p6tf5")

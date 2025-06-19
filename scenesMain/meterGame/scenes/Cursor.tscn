@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci6w25r5lrshx"]
+
+[ext_resource type="Texture2D" uid="uid://cdr306kr7e7ix" path="res://scenesMain/meterGame/sprites/misc/cursor.png" id="1_2v71u"]
+
+[node name="Cursor" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2v71u")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -12.5)

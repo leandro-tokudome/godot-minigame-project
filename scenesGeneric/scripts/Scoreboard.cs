@@ -7,6 +7,7 @@ public partial class Scoreboard : Node2D
 	private Sprite2D _sprite2d;
 	private Label _label;
 	public string DisplayText = "0";
+	[Export]
 	public float ScaleDisplay = 1.0f;
 
 	public override void _Ready()

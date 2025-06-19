@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="project-minigame"
-run/main_scene="uid://c6qv7djr76gmm"
+run/main_scene="uid://3whr7lt4845r"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

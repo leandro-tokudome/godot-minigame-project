@@ -3,12 +3,13 @@ using Godot;
 public partial class ScoreTextFloat : Node2D
 {
 	[Export]
-	public float Speed = 50f;
+	public float Speed = 25f;
 	[Export]
 	public float FadeSpeed = 1.0f;
 	private float _alpha = 1.0f;
 	[Export]
 	public bool IsRed = false;
+	public Color LabelColor = new(1, 1, 1);
 	public string DisplayText = "";
 	private Label _label;
 	public float ScaleDisplay = 1.0f;
@@ -20,6 +21,8 @@ public partial class ScoreTextFloat : Node2D
 		_label.Text = DisplayText;
 		if (IsRed)
 			_label.Modulate = new Color(1, 0, 0, _alpha);
+		else
+			_label.Modulate = LabelColor;
 
 		Scale = new Vector2(ScaleDisplay, ScaleDisplay);
 	}

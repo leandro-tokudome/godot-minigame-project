@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c12fdl2ejvklp"]
+
+[ext_resource type="Texture2D" uid="uid://d3dpd0r3f7i5v" path="res://scenesMain/meterGame/sprites/misc/whiteStripe.png" id="1_nq43a"]
+
+[node name="WhiteStripe" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nq43a")

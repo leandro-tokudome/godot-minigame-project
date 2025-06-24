@@ -7,7 +7,11 @@ public partial class Player : PlayerNodeAbstract
 {
 	private RandomNumberGenerator Rng;
 
+	[Export]
+	private string RelativeStatue = null;
+	private Sprite2D Statue;
 	private PackedScene _cursorPackedScene;
+	private AnimatedSprite2D _animatedSprite2d;
 	private Node2D Cursor;
 	private Marker2D CursorMarker2d;
 	private PackedScene _salmonStripe;
@@ -15,6 +19,13 @@ public partial class Player : PlayerNodeAbstract
 	private PackedScene _redStripe;
 	private PackedScene _whiteStripe;
 	private PackedScene _scoreTextFloat;
+
+	private Texture2D StatueDefault;
+	private Texture2D Statue1;
+	private Texture2D Statue2;
+	private Texture2D Statue3;
+	private Texture2D Statue4;
+	private Texture2D Statue5;
 
 	private readonly List<Node2D> StripesToBeRemoved = [];
 	private int SalmonSize = 16;
@@ -45,6 +56,18 @@ public partial class Player : PlayerNodeAbstract
 		_redStripe = GD.Load<PackedScene>("scenesMain/meterGame/scenes/RedStripe.tscn");
 		_whiteStripe = GD.Load<PackedScene>("scenesMain/meterGame/scenes/WhiteStripe.tscn");
 		_scoreTextFloat = GD.Load<PackedScene>("scenesGeneric/scenes/ScoreTextFloat.tscn");
+		_animatedSprite2d = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		Statue = GetParent().GetNode<Sprite2D>(RelativeStatue);
+
+		StatueDefault = GD.Load<Texture2D>("scenesMain/meterGame/sprites/misc/statue-1.png");
+		Statue1 = GD.Load<Texture2D>("scenesMain/meterGame/sprites/misc/statue-2.png");
+		Statue2 = GD.Load<Texture2D>("scenesMain/meterGame/sprites/misc/statue-3.png");
+		Statue3 = GD.Load<Texture2D>("scenesMain/meterGame/sprites/misc/statue-4.png");
+		Statue4 = GD.Load<Texture2D>("scenesMain/meterGame/sprites/misc/statue-5.png");
+		Statue5 = GD.Load<Texture2D>("scenesMain/meterGame/sprites/misc/statue-6.png");
+
+		_animatedSprite2d.Play("idle");
+		_animatedSprite2d.AnimationFinished += OnAnimationFinished;
 
 		InitializeCursor();
 		GenerateNewBar();
@@ -65,6 +88,8 @@ public partial class Player : PlayerNodeAbstract
 	{
 		if (CanClick)
 		{
+			_animatedSprite2d.Play("dust");
+
 			var cursorPositionX = Cursor.Position.X;
 
 			ScoreTextFloat scoreTextFloat = _scoreTextFloat.Instantiate<ScoreTextFloat>();
@@ -75,30 +100,35 @@ public partial class Player : PlayerNodeAbstract
 
 			if (cursorPositionX >= InitialSalmonPosition && cursorPositionX < InitialOrangePosition)
 			{
+				Statue.Texture = Statue2;
 				InGameScore += 1;
 				scoreTextFloat.DisplayText = "+1";
 				scoreTextFloat.LabelColor = new Color(255 / 255f, 187 / 255f, 186 / 255f);
 			}
 			else if (cursorPositionX >= InitialOrangePosition && cursorPositionX < InitialRedPosition)
 			{
+				Statue.Texture = Statue3;
 				InGameScore += 2;
 				scoreTextFloat.DisplayText = "+2";
 				scoreTextFloat.LabelColor = new Color(244 / 255f, 90 / 255f, 0);
 			}
 			else if (cursorPositionX >= InitialRedPosition && cursorPositionX < InitialWhitePosition)
 			{
+				Statue.Texture = Statue4;
 				InGameScore += 3;
 				scoreTextFloat.DisplayText = "+3";
 				scoreTextFloat.LabelColor = new Color(208 / 255f, 0, 0);
 			}
 			else if (cursorPositionX >= InitialWhitePosition && cursorPositionX < InitialWhitePosition + WhiteSize)
 			{
-				InGameScore += 4;
-				scoreTextFloat.DisplayText = "+4";
+				Statue.Texture = Statue5;
+				InGameScore += 5;
+				scoreTextFloat.DisplayText = "+5";
 				scoreTextFloat.LabelColor = new Color(1, 1, 1);
 			}
 			else
 			{
+				Statue.Texture = Statue1;
 				scoreTextFloat.DisplayText = "MISS";
 				scoreTextFloat.LabelColor = new Color(161 / 255f, 161 / 255f, 161 / 255f);
 			}
@@ -121,6 +151,8 @@ public partial class Player : PlayerNodeAbstract
 
 	private void GenerateNewBar()
 	{
+		Statue.Texture = StatueDefault;
+
 		var initialBarPosition = Rng.RandfRange(
 			-69.0f,
 			69.0f - SalmonSize - OrangeSize - RedSize - WhiteSize
@@ -156,4 +188,7 @@ public partial class Player : PlayerNodeAbstract
 			CursorVelocity += CursorVelocityAddition;
 		Cursor.Position = CursorInitialPosition;
 	}
+
+	private void OnAnimationFinished()
+		=> _animatedSprite2d.Play("idle");
 }

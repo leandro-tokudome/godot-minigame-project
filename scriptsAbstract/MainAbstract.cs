@@ -36,7 +36,8 @@ public partial class MainAbstract : Node2D
 
 			if (supportIndex > Players)
 			{
-				GetNode($"Player{supportIndex}").QueueFree();
+				if (HasNode($"Player{supportIndex}"))
+					GetNode($"Player{supportIndex}").QueueFree();
 				if (HasNode($"Scoreboard{supportIndex}"))
 					GetNode($"Scoreboard{supportIndex}").QueueFree();
 				supportIndex--;

@@ -1,0 +1,126 @@
+[gd_scene load_steps=27 format=3 uid="uid://cnc1ycs0md4k2"]
+
+[ext_resource type="Script" uid="uid://biujrlcqefcu5" path="res://scenesMain/timeGame/scripts/Player.cs" id="1_syi16"]
+[ext_resource type="Texture2D" uid="uid://urqut5j3g2rh" path="res://scenesMain/timeGame/sprites/player1/player1-action-1.png" id="1_yhwv4"]
+[ext_resource type="Texture2D" uid="uid://bcbjbsa7m2n64" path="res://scenesMain/timeGame/sprites/player1/player1-action-2.png" id="2_syi16"]
+[ext_resource type="Texture2D" uid="uid://0dp36vvl25n4" path="res://scenesMain/timeGame/sprites/player1/player1-action-3.png" id="3_45ktl"]
+[ext_resource type="Texture2D" uid="uid://btuisj7jm6e15" path="res://scenesMain/timeGame/sprites/player1/player1-action-4.png" id="4_0frp0"]
+[ext_resource type="Texture2D" uid="uid://c68fxihtm0wa2" path="res://scenesMain/timeGame/sprites/player1/player1-action-5.png" id="5_12wtx"]
+[ext_resource type="Texture2D" uid="uid://6vnbmpbtcxbu" path="res://scenesMain/timeGame/sprites/player1/player1-action-6.png" id="6_8kdhn"]
+[ext_resource type="Texture2D" uid="uid://b2yu37aoffimd" path="res://scenesMain/timeGame/sprites/player1/player1-action-7.png" id="7_pbtwa"]
+[ext_resource type="Texture2D" uid="uid://b67td87urlbdq" path="res://scenesMain/timeGame/sprites/player1/player1-action-8.png" id="8_svioi"]
+[ext_resource type="Texture2D" uid="uid://b4p24b7dohvl5" path="res://scenesMain/timeGame/sprites/player1/player1-action-9.png" id="9_73brb"]
+[ext_resource type="Texture2D" uid="uid://ckeq1grar01te" path="res://scenesMain/timeGame/sprites/player1/player1-action-10.png" id="10_0w058"]
+[ext_resource type="Texture2D" uid="uid://1v5287xyam50" path="res://scenesMain/timeGame/sprites/player1/player1-action-11.png" id="11_x5jh2"]
+[ext_resource type="Texture2D" uid="uid://cqjk30107cb2e" path="res://scenesMain/timeGame/sprites/player1/player1-action-12.png" id="12_yby1n"]
+[ext_resource type="Texture2D" uid="uid://lcyb76uwr7hh" path="res://scenesMain/timeGame/sprites/player1/player1-action-13.png" id="13_2liex"]
+[ext_resource type="Texture2D" uid="uid://ilal265uevll" path="res://scenesMain/timeGame/sprites/player1/player1-action-14.png" id="14_ofm4q"]
+[ext_resource type="Texture2D" uid="uid://cqstncyctqyao" path="res://scenesMain/timeGame/sprites/player1/player1-action-15.png" id="15_h64cf"]
+[ext_resource type="Texture2D" uid="uid://dx5qepwfi8mrd" path="res://scenesMain/timeGame/sprites/player1/player1-action-16.png" id="16_4sixc"]
+[ext_resource type="Texture2D" uid="uid://vcvufvc2o4f3" path="res://scenesMain/timeGame/sprites/player1/player1-action-17.png" id="17_88su3"]
+[ext_resource type="Texture2D" uid="uid://lp76p54dylmo" path="res://scenesMain/timeGame/sprites/player1/player1-action-18.png" id="18_qttj2"]
+[ext_resource type="Texture2D" uid="uid://bt4h3mxf4wsme" path="res://scenesMain/timeGame/sprites/player1/player1-action-19.png" id="19_fn0ae"]
+[ext_resource type="Texture2D" uid="uid://caktdqbwc4q2q" path="res://scenesMain/timeGame/sprites/player1/player1-action-20.png" id="20_j7hjo"]
+[ext_resource type="Texture2D" uid="uid://bljd0pk82ttq3" path="res://scenesMain/timeGame/sprites/player1/player1-idle-1.png" id="21_6ftrq"]
+[ext_resource type="Texture2D" uid="uid://b577wxuluxid1" path="res://scenesMain/timeGame/sprites/player1/player1-idle-2.png" id="22_j6q8x"]
+[ext_resource type="FontFile" uid="uid://cjv8ij2wdlfjx" path="res://font/Perfect DOS VGA 437.ttf" id="24_45ktl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4lov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yhwv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_syi16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_45ktl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0frp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_12wtx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8kdhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pbtwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_svioi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_73brb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0w058")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x5jh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yby1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2liex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ofm4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h64cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4sixc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_88su3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qttj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fn0ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_j7hjo")
+}],
+"loop": false,
+"name": &"action",
+"speed": 100.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_6ftrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_j6q8x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0frp0"]
+font = ExtResource("24_45ktl")
+font_size = 11
+
+[node name="Player1" type="Node2D"]
+script = ExtResource("1_syi16")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v4lov")
+animation = &"action"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -22.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 26.0
+label_settings = SubResource("LabelSettings_0frp0")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://o1m0owno18d2"]
+
+[ext_resource type="Script" uid="uid://c6tvikg6m7xc7" path="res://scenesMain/timeGame/scripts/Main.cs" id="1_62xg0"]
+[ext_resource type="PackedScene" uid="uid://cnc1ycs0md4k2" path="res://scenesMain/timeGame/scenes/Player1.tscn" id="2_namgj"]
+[ext_resource type="FontFile" uid="uid://cjv8ij2wdlfjx" path="res://font/Perfect DOS VGA 437.ttf" id="3_6ygyn"]
+[ext_resource type="Texture2D" uid="uid://d2iia2xvncneh" path="res://scenesMain/timeGame/sprites/misc/time-display.png" id="3_wxynr"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="5_rebgr"]
+[ext_resource type="PackedScene" uid="uid://c8ifbj5rl6jsm" path="res://scenesMain/timeGame/scenes/Player2.tscn" id="6_b634f"]
+[ext_resource type="PackedScene" uid="uid://c2xcny2lalgvb" path="res://scenesMain/timeGame/scenes/Player3.tscn" id="7_jbxh5"]
+[ext_resource type="PackedScene" uid="uid://ykerjr707apy" path="res://scenesMain/timeGame/scenes/Player4.tscn" id="8_2bf4u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wxynr"]
+font = ExtResource("3_6ygyn")
+font_size = 32
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_62xg0")
+Players = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 72)
+
+[node name="Player1" parent="." instance=ExtResource("2_namgj")]
+position = Vector2(38, 108)
+ActionButton = "action_p1"
+RelativeScoreboard = "Scoreboard1"
+
+[node name="Player2" parent="." instance=ExtResource("6_b634f")]
+position = Vector2(98, 108)
+ActionButton = "action_p2"
+RelativeScoreboard = "Scoreboard2"
+
+[node name="Player3" parent="." instance=ExtResource("7_jbxh5")]
+position = Vector2(158, 108)
+ActionButton = "action_p3"
+RelativeScoreboard = "Scoreboard3"
+
+[node name="Player4" parent="." instance=ExtResource("8_2bf4u")]
+position = Vector2(218, 108)
+ActionButton = "action_p4"
+RelativeScoreboard = "Scoreboard4"
+
+[node name="TimeDisplay" type="Sprite2D" parent="."]
+position = Vector2(128, 38)
+texture = ExtResource("3_wxynr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 78.0
+offset_top = 22.0
+offset_right = 178.0
+offset_bottom = 54.0
+label_settings = SubResource("LabelSettings_wxynr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scoreboard1" parent="." instance=ExtResource("5_rebgr")]
+position = Vector2(39, 20)
+PlayerSprite = "player1"
+
+[node name="Scoreboard2" parent="." instance=ExtResource("5_rebgr")]
+position = Vector2(40, 54)
+PlayerSprite = "player2"
+
+[node name="Scoreboard3" parent="." instance=ExtResource("5_rebgr")]
+position = Vector2(217, 20)
+PlayerSprite = "player3"
+
+[node name="Scoreboard4" parent="." instance=ExtResource("5_rebgr")]
+position = Vector2(217, 54)
+PlayerSprite = "player4"

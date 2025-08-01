@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://blmdaxvbfou0n"]
+
+[ext_resource type="Script" uid="uid://clv0tgsl46hl4" path="res://scenesMain/countGame/scripts/Main.cs" id="1_3h2ul"]
+[ext_resource type="PackedScene" uid="uid://cs8co42xdqd21" path="res://scenesMain/countGame/scenes/Player1.tscn" id="2_58oll"]
+[ext_resource type="PackedScene" uid="uid://wriew3n4glb7" path="res://scenesMain/countGame/scenes/Player2.tscn" id="3_s1hsh"]
+[ext_resource type="PackedScene" uid="uid://coc6ghiywoom0" path="res://scenesMain/countGame/scenes/Player3.tscn" id="4_30xa6"]
+[ext_resource type="PackedScene" uid="uid://cr368lgr1fqq7" path="res://scenesMain/countGame/scenes/Player4.tscn" id="5_pt882"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="6_s1hsh"]
+[ext_resource type="Texture2D" uid="uid://bal4rmws6cp2l" path="res://scenesMain/countGame/sprites/misc/count-display.png" id="7_pt882"]
+[ext_resource type="FontFile" uid="uid://cjv8ij2wdlfjx" path="res://font/Perfect DOS VGA 437.ttf" id="8_8ak15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58oll"]
+size = Vector2(20, 255.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h4v5x"]
+font = ExtResource("8_8ak15")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3h2ul")
+Players = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(128, 72)
+
+[node name="Player1" parent="." instance=ExtResource("2_58oll")]
+position = Vector2(38, 120)
+ActionButton = "action_p1"
+RelativeScoreboard = "Scoreboard1"
+
+[node name="Player2" parent="." instance=ExtResource("3_s1hsh")]
+position = Vector2(98, 120)
+ActionButton = "action_p2"
+RelativeScoreboard = "Scoreboard2"
+
+[node name="Player3" parent="." instance=ExtResource("4_30xa6")]
+position = Vector2(158, 120)
+ActionButton = "action_p3"
+RelativeScoreboard = "Scoreboard3"
+
+[node name="Player4" parent="." instance=ExtResource("5_pt882")]
+position = Vector2(218, 120)
+ActionButton = "action_p4"
+RelativeScoreboard = "Scoreboard4"
+
+[node name="Area2DRight" type="Area2D" parent="."]
+position = Vector2(296, 71)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DRight"]
+shape = SubResource("RectangleShape2D_58oll")
+
+[node name="TimerStartGame" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="TimerButterflySpawn" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="TimerFinishGame" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Scoreboard1" parent="." instance=ExtResource("6_s1hsh")]
+visible = false
+position = Vector2(38, 87)
+PlayerSprite = "player1"
+
+[node name="Scoreboard2" parent="." instance=ExtResource("6_s1hsh")]
+visible = false
+position = Vector2(98, 87)
+PlayerSprite = "player2"
+
+[node name="Scoreboard3" parent="." instance=ExtResource("6_s1hsh")]
+visible = false
+position = Vector2(158, 87)
+PlayerSprite = "player3"
+
+[node name="Scoreboard4" parent="." instance=ExtResource("6_s1hsh")]
+visible = false
+position = Vector2(218, 87)
+PlayerSprite = "player4"
+
+[node name="CountDisplay" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(128, 35)
+texture = ExtResource("7_pt882")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 70.0
+offset_top = 17.0
+offset_right = 186.0
+offset_bottom = 57.0
+label_settings = SubResource("LabelSettings_h4v5x")
+horizontal_alignment = 1
+vertical_alignment = 1

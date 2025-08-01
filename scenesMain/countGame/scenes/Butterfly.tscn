@@ -1,0 +1,516 @@
+[gd_scene load_steps=76 format=3 uid="uid://dhfdtgo2dhti0"]
+
+[ext_resource type="Texture2D" uid="uid://c34ts0o31m7dg" path="res://scenesMain/countGame/sprites/misc/black-butterfly-1.png" id="1_fx8cf"]
+[ext_resource type="Script" uid="uid://c8lu62pnj48ad" path="res://scenesMain/countGame/scripts/Butterfly.cs" id="1_symfo"]
+[ext_resource type="Texture2D" uid="uid://dwn6a68y5qunm" path="res://scenesMain/countGame/sprites/misc/black-butterfly-2.png" id="2_symfo"]
+[ext_resource type="Texture2D" uid="uid://1id5ypbwur8j" path="res://scenesMain/countGame/sprites/misc/black-butterfly-3.png" id="3_ncabu"]
+[ext_resource type="Texture2D" uid="uid://5fb3cui0jf40" path="res://scenesMain/countGame/sprites/misc/black-butterfly-4.png" id="4_3kufi"]
+[ext_resource type="Texture2D" uid="uid://cd1k7wow3gnf0" path="res://scenesMain/countGame/sprites/misc/black-butterfly-5.png" id="5_6d7qk"]
+[ext_resource type="Texture2D" uid="uid://cl3w6pcv5vwyr" path="res://scenesMain/countGame/sprites/misc/black-butterfly-6.png" id="6_3for4"]
+[ext_resource type="Texture2D" uid="uid://bd7tvnqplvpd6" path="res://scenesMain/countGame/sprites/misc/black-butterfly-7.png" id="7_pt52n"]
+[ext_resource type="Texture2D" uid="uid://dmsx68mh3b6ab" path="res://scenesMain/countGame/sprites/misc/black-butterfly-8.png" id="8_o3nxw"]
+[ext_resource type="Texture2D" uid="uid://bv8w08aiguwhj" path="res://scenesMain/countGame/sprites/misc/blue-butterfly-1.png" id="9_ycbup"]
+[ext_resource type="Texture2D" uid="uid://bsy75f8eq28w" path="res://scenesMain/countGame/sprites/misc/blue-butterfly-2.png" id="10_dr7dm"]
+[ext_resource type="Texture2D" uid="uid://cdba377w8bs84" path="res://scenesMain/countGame/sprites/misc/blue-butterfly-3.png" id="11_p68n8"]
+[ext_resource type="Texture2D" uid="uid://dn0ure6fr5yql" path="res://scenesMain/countGame/sprites/misc/blue-butterfly-4.png" id="12_kt6eg"]
+[ext_resource type="Texture2D" uid="uid://bxxas782k5bvy" path="res://scenesMain/countGame/sprites/misc/blue-butterfly-5.png" id="13_m7d8p"]
+[ext_resource type="Texture2D" uid="uid://ba8h7lpvrhs3r" path="res://scenesMain/countGame/sprites/misc/blue-butterfly-6.png" id="14_oq3bv"]
+[ext_resource type="Texture2D" uid="uid://cenq8itseyb1r" path="res://scenesMain/countGame/sprites/misc/blue-butterfly-7.png" id="15_04wu4"]
+[ext_resource type="Texture2D" uid="uid://dgym50svbygtx" path="res://scenesMain/countGame/sprites/misc/blue-butterfly-8.png" id="16_jo452"]
+[ext_resource type="Texture2D" uid="uid://jrveujpab33g" path="res://scenesMain/countGame/sprites/misc/brown-butterfly-1.png" id="17_7syt0"]
+[ext_resource type="Texture2D" uid="uid://cgxug4qm1cj5p" path="res://scenesMain/countGame/sprites/misc/brown-butterfly-2.png" id="18_0jbkp"]
+[ext_resource type="Texture2D" uid="uid://bxy1pd8cvjto2" path="res://scenesMain/countGame/sprites/misc/brown-butterfly-3.png" id="19_713yf"]
+[ext_resource type="Texture2D" uid="uid://bsvoj5r48otgx" path="res://scenesMain/countGame/sprites/misc/brown-butterfly-4.png" id="20_4fwmj"]
+[ext_resource type="Texture2D" uid="uid://d3hgmux3nuuxx" path="res://scenesMain/countGame/sprites/misc/brown-butterfly-5.png" id="21_fujfe"]
+[ext_resource type="Texture2D" uid="uid://cfu3h7ssw7ptk" path="res://scenesMain/countGame/sprites/misc/brown-butterfly-6.png" id="22_g4ra5"]
+[ext_resource type="Texture2D" uid="uid://b4bcvriid4mg4" path="res://scenesMain/countGame/sprites/misc/brown-butterfly-7.png" id="23_my6wd"]
+[ext_resource type="Texture2D" uid="uid://d3ds00vs2bk0q" path="res://scenesMain/countGame/sprites/misc/brown-butterfly-8.png" id="24_kan1r"]
+[ext_resource type="Texture2D" uid="uid://b2hja5fetm4hh" path="res://scenesMain/countGame/sprites/misc/green-butterfly-1.png" id="25_0flxc"]
+[ext_resource type="Texture2D" uid="uid://dc4j8ea26jbu5" path="res://scenesMain/countGame/sprites/misc/green-butterfly-2.png" id="26_cw3d5"]
+[ext_resource type="Texture2D" uid="uid://p2w3pvlrdxv5" path="res://scenesMain/countGame/sprites/misc/green-butterfly-3.png" id="27_xhpsh"]
+[ext_resource type="Texture2D" uid="uid://fmmooia6kr6s" path="res://scenesMain/countGame/sprites/misc/green-butterfly-4.png" id="28_belno"]
+[ext_resource type="Texture2D" uid="uid://co5atqf3cutt3" path="res://scenesMain/countGame/sprites/misc/green-butterfly-5.png" id="29_sj5jj"]
+[ext_resource type="Texture2D" uid="uid://bfsl8jubtgbvd" path="res://scenesMain/countGame/sprites/misc/green-butterfly-6.png" id="30_q24pn"]
+[ext_resource type="Texture2D" uid="uid://do8dsynp4wlbu" path="res://scenesMain/countGame/sprites/misc/green-butterfly-7.png" id="31_u0ql3"]
+[ext_resource type="Texture2D" uid="uid://dn22cq2gwuvl5" path="res://scenesMain/countGame/sprites/misc/green-butterfly-8.png" id="32_1wlip"]
+[ext_resource type="Texture2D" uid="uid://cj8imqyiufydq" path="res://scenesMain/countGame/sprites/misc/orange-butterfly-1.png" id="33_n32y7"]
+[ext_resource type="Texture2D" uid="uid://2mf1m6vdcrf7" path="res://scenesMain/countGame/sprites/misc/orange-butterfly-2.png" id="34_ox1wy"]
+[ext_resource type="Texture2D" uid="uid://dkqmc82ah1c2u" path="res://scenesMain/countGame/sprites/misc/orange-butterfly-3.png" id="35_nc4cl"]
+[ext_resource type="Texture2D" uid="uid://bwtmswe8w3j36" path="res://scenesMain/countGame/sprites/misc/orange-butterfly-4.png" id="36_jeu1r"]
+[ext_resource type="Texture2D" uid="uid://d1hu710kj2mg3" path="res://scenesMain/countGame/sprites/misc/orange-butterfly-5.png" id="37_gkf47"]
+[ext_resource type="Texture2D" uid="uid://bjhgf61ptmnc5" path="res://scenesMain/countGame/sprites/misc/orange-butterfly-6.png" id="38_0v0yf"]
+[ext_resource type="Texture2D" uid="uid://g1mjja2dxc0x" path="res://scenesMain/countGame/sprites/misc/orange-butterfly-7.png" id="39_jn5iw"]
+[ext_resource type="Texture2D" uid="uid://bkk8uumcwo07l" path="res://scenesMain/countGame/sprites/misc/orange-butterfly-8.png" id="40_rpq71"]
+[ext_resource type="Texture2D" uid="uid://bna1rmyta3y2l" path="res://scenesMain/countGame/sprites/misc/pink-butterfly-1.png" id="41_k0o54"]
+[ext_resource type="Texture2D" uid="uid://btpr1agqj4sv5" path="res://scenesMain/countGame/sprites/misc/pink-butterfly-2.png" id="42_i3ywb"]
+[ext_resource type="Texture2D" uid="uid://cps8toimt6gl" path="res://scenesMain/countGame/sprites/misc/pink-butterfly-3.png" id="43_aywyt"]
+[ext_resource type="Texture2D" uid="uid://couas54vgqm0q" path="res://scenesMain/countGame/sprites/misc/pink-butterfly-4.png" id="44_c44hk"]
+[ext_resource type="Texture2D" uid="uid://das422ydqtu6n" path="res://scenesMain/countGame/sprites/misc/pink-butterfly-5.png" id="45_jk8ua"]
+[ext_resource type="Texture2D" uid="uid://dr68ljqh5t853" path="res://scenesMain/countGame/sprites/misc/pink-butterfly-6.png" id="46_p283h"]
+[ext_resource type="Texture2D" uid="uid://cwfdumep44uh1" path="res://scenesMain/countGame/sprites/misc/pink-butterfly-7.png" id="47_kr7s1"]
+[ext_resource type="Texture2D" uid="uid://csv0u5ug5kbmp" path="res://scenesMain/countGame/sprites/misc/pink-butterfly-8.png" id="48_budjl"]
+[ext_resource type="Texture2D" uid="uid://c56asjhqro5ff" path="res://scenesMain/countGame/sprites/misc/purple-butterfly-1.png" id="49_bjdv0"]
+[ext_resource type="Texture2D" uid="uid://dwbwu8ba24t78" path="res://scenesMain/countGame/sprites/misc/purple-butterfly-2.png" id="50_wty3h"]
+[ext_resource type="Texture2D" uid="uid://4ddolbnfms13" path="res://scenesMain/countGame/sprites/misc/purple-butterfly-3.png" id="51_ww468"]
+[ext_resource type="Texture2D" uid="uid://bjaw0nj3vmvdn" path="res://scenesMain/countGame/sprites/misc/purple-butterfly-4.png" id="52_i3oaq"]
+[ext_resource type="Texture2D" uid="uid://dsuu2ctngtpbj" path="res://scenesMain/countGame/sprites/misc/purple-butterfly-5.png" id="53_a0h71"]
+[ext_resource type="Texture2D" uid="uid://b6bqpek122nkx" path="res://scenesMain/countGame/sprites/misc/purple-butterfly-6.png" id="54_xmuh1"]
+[ext_resource type="Texture2D" uid="uid://cw8ug7xooshjw" path="res://scenesMain/countGame/sprites/misc/purple-butterfly-7.png" id="55_iwtwp"]
+[ext_resource type="Texture2D" uid="uid://gcfwk571xsr8" path="res://scenesMain/countGame/sprites/misc/purple-butterfly-8.png" id="56_wepn4"]
+[ext_resource type="Texture2D" uid="uid://c6s4wrdeejat" path="res://scenesMain/countGame/sprites/misc/red-butterfly-1.png" id="57_4t6al"]
+[ext_resource type="Texture2D" uid="uid://c2pt7wvg6km6v" path="res://scenesMain/countGame/sprites/misc/red-butterfly-2.png" id="58_tb85e"]
+[ext_resource type="Texture2D" uid="uid://b2k8fvf1kkx6a" path="res://scenesMain/countGame/sprites/misc/red-butterfly-3.png" id="59_0x5b8"]
+[ext_resource type="Texture2D" uid="uid://b3c2mvml6gwt" path="res://scenesMain/countGame/sprites/misc/red-butterfly-4.png" id="60_v8v8h"]
+[ext_resource type="Texture2D" uid="uid://b657x7klhx5n2" path="res://scenesMain/countGame/sprites/misc/red-butterfly-5.png" id="61_u0mwv"]
+[ext_resource type="Texture2D" uid="uid://3gdt3ow8b0kk" path="res://scenesMain/countGame/sprites/misc/red-butterfly-6.png" id="62_1b7ej"]
+[ext_resource type="Texture2D" uid="uid://gy00cyewunow" path="res://scenesMain/countGame/sprites/misc/red-butterfly-7.png" id="63_8iq32"]
+[ext_resource type="Texture2D" uid="uid://bgoosaennx04h" path="res://scenesMain/countGame/sprites/misc/red-butterfly-8.png" id="64_8l055"]
+[ext_resource type="Texture2D" uid="uid://cygtsgrpxknd5" path="res://scenesMain/countGame/sprites/misc/yellow-butterfly-1.png" id="65_hbqmp"]
+[ext_resource type="Texture2D" uid="uid://b8kgxkoyrt4s1" path="res://scenesMain/countGame/sprites/misc/yellow-butterfly-2.png" id="66_76etj"]
+[ext_resource type="Texture2D" uid="uid://c3avlnej0sa8m" path="res://scenesMain/countGame/sprites/misc/yellow-butterfly-3.png" id="67_7pry6"]
+[ext_resource type="Texture2D" uid="uid://cdpdtpqffoqv2" path="res://scenesMain/countGame/sprites/misc/yellow-butterfly-4.png" id="68_tuy2o"]
+[ext_resource type="Texture2D" uid="uid://5av0ncrx45mk" path="res://scenesMain/countGame/sprites/misc/yellow-butterfly-5.png" id="69_e88lb"]
+[ext_resource type="Texture2D" uid="uid://d3mey2rxrq6u1" path="res://scenesMain/countGame/sprites/misc/yellow-butterfly-6.png" id="70_fm87g"]
+[ext_resource type="Texture2D" uid="uid://b6xbmnwgnfdb4" path="res://scenesMain/countGame/sprites/misc/yellow-butterfly-7.png" id="71_lhd2v"]
+[ext_resource type="Texture2D" uid="uid://cukyjh46mmorp" path="res://scenesMain/countGame/sprites/misc/yellow-butterfly-8.png" id="72_nvyoc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gnu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fx8cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_symfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ncabu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3kufi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6d7qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3for4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pt52n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o3nxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pt52n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3for4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6d7qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3kufi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ncabu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_symfo")
+}],
+"loop": true,
+"name": &"black",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ycbup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dr7dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p68n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kt6eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m7d8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_oq3bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_04wu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jo452")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_04wu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_oq3bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m7d8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kt6eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p68n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dr7dm")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_7syt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0jbkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_713yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4fwmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fujfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_g4ra5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_my6wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kan1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_my6wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_g4ra5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fujfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4fwmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_713yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0jbkp")
+}],
+"loop": true,
+"name": &"brown",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_0flxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_cw3d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xhpsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_belno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sj5jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_q24pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_u0ql3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_1wlip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_u0ql3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_q24pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sj5jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_belno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xhpsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_cw3d5")
+}],
+"loop": true,
+"name": &"green",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_n32y7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ox1wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_nc4cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jeu1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_gkf47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0v0yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jn5iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rpq71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jn5iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0v0yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_gkf47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jeu1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_nc4cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ox1wy")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_k0o54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_i3ywb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_aywyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_c44hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_jk8ua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_p283h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_kr7s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_budjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_kr7s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_p283h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_jk8ua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_c44hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_aywyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_i3ywb")
+}],
+"loop": true,
+"name": &"pink",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_bjdv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_wty3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ww468")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_i3oaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_a0h71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_xmuh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_iwtwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_wepn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_iwtwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_xmuh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_a0h71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_i3oaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ww468")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_wty3h")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_4t6al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_tb85e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_0x5b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_v8v8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_u0mwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_1b7ej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_8iq32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_8l055")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_8iq32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_1b7ej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_u0mwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_v8v8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_0x5b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_tb85e")
+}],
+"loop": true,
+"name": &"red",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_hbqmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_76etj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_7pry6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_tuy2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_e88lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_fm87g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_lhd2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_nvyoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_lhd2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_fm87g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_e88lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_tuy2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_7pry6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_76etj")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 35.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_symfo"]
+radius = 6.08276
+
+[node name="Butterfly" type="Node2D"]
+script = ExtResource("1_symfo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4gnu1")
+animation = &"yellow"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_symfo")

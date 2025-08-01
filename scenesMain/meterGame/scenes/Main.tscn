@@ -12,6 +12,7 @@
 script = ExtResource("1_m0psu")
 ShowTimer = true
 GameTime = 60
+Players = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(128, 72)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://coc6ghiywoom0"]
+
+[ext_resource type="Texture2D" uid="uid://bufjp4au8mny3" path="res://scenesMain/countGame/sprites/player3/player3-action-2.png" id="1_pi724"]
+[ext_resource type="Texture2D" uid="uid://ck1cetn75fmte" path="res://scenesMain/countGame/sprites/player3/player3-action-1.png" id="2_ecux2"]
+[ext_resource type="Script" uid="uid://clhdryhfc6dtp" path="res://scenesMain/countGame/scripts/Player.cs" id="3_ecux2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2881o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pi724")
+}],
+"loop": false,
+"name": &"action",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ecux2")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player3" type="Node2D"]
+script = ExtResource("3_ecux2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2881o")
+animation = &"idle"

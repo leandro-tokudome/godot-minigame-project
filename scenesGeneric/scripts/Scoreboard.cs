@@ -5,7 +5,7 @@ public partial class Scoreboard : Node2D
 	[Export]
 	private string PlayerSprite = "player";
 	private Sprite2D _sprite2d;
-	private Label _label;
+	public Label _label;
 	public string DisplayText = "0";
 	[Export]
 	public float ScaleDisplay = 1.0f;
@@ -16,8 +16,10 @@ public partial class Scoreboard : Node2D
 		_sprite2d.Texture = GD.Load<Texture2D>($"scenesGeneric/sprites/scoreboard-{PlayerSprite}.png");
 
 		_label = GetNode<Label>("Label");
-		_label.Modulate = new Color(0, 0, 0);
 		_label.Text = DisplayText;
+
+		if (_label.LabelSettings != null)
+			_label.LabelSettings = _label.LabelSettings.Duplicate() as LabelSettings;
 
 		Scale = new Vector2(ScaleDisplay, ScaleDisplay);
 	}

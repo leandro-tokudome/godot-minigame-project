@@ -17,6 +17,7 @@ size = Vector2(271, 20)
 script = ExtResource("1_0tf5k")
 ShowTimer = true
 GameTime = 90
+Players = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(128, 72)

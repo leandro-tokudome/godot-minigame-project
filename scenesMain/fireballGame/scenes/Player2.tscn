@@ -1,0 +1,83 @@
+[gd_scene load_steps=16 format=3 uid="uid://dm2itgv43fvfh"]
+
+[ext_resource type="Script" uid="uid://h80wlclf6550" path="res://scenesMain/fireballGame/scripts/Player.cs" id="1_qhlm6"]
+[ext_resource type="Texture2D" uid="uid://tec3cspw5uhx" path="res://scenesMain/fireballGame/sprites/player2/player2-action-1.png" id="1_qktqc"]
+[ext_resource type="Texture2D" uid="uid://bumlfi4i23wm7" path="res://scenesMain/fireballGame/sprites/player2/player2-action-2.png" id="2_qhlm6"]
+[ext_resource type="Texture2D" uid="uid://cjt8pjajjxjoy" path="res://scenesMain/fireballGame/sprites/player2/player2-action-3.png" id="3_5ubh6"]
+[ext_resource type="Texture2D" uid="uid://dkauajptcg82a" path="res://scenesMain/fireballGame/sprites/player2/player2-action-4.png" id="4_31lkv"]
+[ext_resource type="Texture2D" uid="uid://cqs5jd4p2k07v" path="res://scenesMain/fireballGame/sprites/player2/player2-action-5.png" id="5_k6aiu"]
+[ext_resource type="Texture2D" uid="uid://c88d8ugs618jf" path="res://scenesMain/fireballGame/sprites/player2/player2-death-1.png" id="7_ib2xn"]
+[ext_resource type="Texture2D" uid="uid://x1ibi3gxtwrq" path="res://scenesMain/fireballGame/sprites/player2/player2-death-2.png" id="8_86n4h"]
+[ext_resource type="Texture2D" uid="uid://bpm24ychcs7v6" path="res://scenesMain/fireballGame/sprites/player2/player2-death-3.png" id="9_tklnr"]
+[ext_resource type="Texture2D" uid="uid://dyw7x1djwr2vu" path="res://scenesMain/fireballGame/sprites/player2/player2-death-4.png" id="10_h4js5"]
+[ext_resource type="Texture2D" uid="uid://dw1gi0yov5f07" path="res://scenesMain/fireballGame/sprites/player2/player2-death-5.png" id="11_1o3c6"]
+[ext_resource type="Texture2D" uid="uid://15erscuijviw" path="res://scenesMain/fireballGame/sprites/player2/player2-death-6.png" id="12_q23ab"]
+[ext_resource type="Texture2D" uid="uid://2n4qsglirw07" path="res://scenesMain/fireballGame/sprites/player2/player2-death-7.png" id="13_h065v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mc110"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qktqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qhlm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5ubh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_31lkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k6aiu")
+}],
+"loop": true,
+"name": &"action",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ib2xn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_86n4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tklnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h4js5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1o3c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_q23ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h065v")
+}],
+"loop": false,
+"name": &"death",
+"speed": 25.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ib2xn"]
+radius = 3.0
+height = 22.0
+
+[node name="Player2" type="CharacterBody2D"]
+script = ExtResource("1_qhlm6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mc110")
+animation = &"action"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_ib2xn")
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 0.24
+one_shot = true

@@ -8,7 +8,6 @@ public partial class Player : PlayerCharacterBodyAbstract
 
 	[Export]
 	private float JumpVelocity = 0f;
-	private float PlayerSpeedX = 0f;
 
 	private AnimatedSprite2D _animatedSprite;
 	private CollisionShape2D _collisionShape;

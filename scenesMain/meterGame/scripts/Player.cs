@@ -5,7 +5,7 @@ namespace MeterGame;
 
 public partial class Player : PlayerNodeAbstract
 {
-	private RandomNumberGenerator Rng;
+	private Main _main;
 
 	[Export]
 	private string RelativeStatue = null;
@@ -28,14 +28,6 @@ public partial class Player : PlayerNodeAbstract
 	private Texture2D Statue5;
 
 	private readonly List<Node2D> StripesToBeRemoved = [];
-	private int SalmonSize = 16;
-	private int OrangeSize = 12;
-	private int RedSize = 8;
-	private int WhiteSize = 4;
-	private float InitialSalmonPosition;
-	private float InitialOrangePosition;
-	private float InitialRedPosition;
-	private float InitialWhitePosition;
 	private float CursorVelocity = 54.0f;
 	private float CursorVelocityAddition = 3.5f;
 	private float MaxCursorVelocity = 180f;
@@ -47,8 +39,7 @@ public partial class Player : PlayerNodeAbstract
 	{
 		base._Ready();
 
-		Rng = new();
-		Rng.Randomize();
+		_main = GetParent() as Main;
 
 		_cursorPackedScene = GD.Load<PackedScene>("scenesMain/meterGame/scenes/Cursor.tscn");
 		_salmonStripe = GD.Load<PackedScene>("scenesMain/meterGame/scenes/SalmonStripe.tscn");
@@ -70,7 +61,7 @@ public partial class Player : PlayerNodeAbstract
 		_animatedSprite2d.AnimationFinished += OnAnimationFinished;
 
 		InitializeCursor();
-		GenerateNewBar();
+		RepositionCursor();
 	}
 
 	public override void _Process(double delta)
@@ -80,7 +71,14 @@ public partial class Player : PlayerNodeAbstract
 		{
 			StripesToBeRemoved.ForEach(x => x.QueueFree());
 			StripesToBeRemoved.Clear();
-			GenerateNewBar();
+
+			_main.PLayersFinishedBar++;
+
+			if (_main.PLayersFinishedBar == _main.Players)
+			{
+				_main.ActivateGenerationPlayersNewBar();
+				_main.PLayersFinishedBar = 0;
+			}
 		}
 	}
 
@@ -98,28 +96,28 @@ public partial class Player : PlayerNodeAbstract
 			scoreTextFloat.FadeSpeed = 1.5f;
 			scoreTextFloat.Speed = 15f;
 
-			if (cursorPositionX >= InitialSalmonPosition && cursorPositionX < InitialOrangePosition)
+			if (cursorPositionX >= _main.InitialSalmonPosition && cursorPositionX < _main.InitialOrangePosition)
 			{
 				Statue.Texture = Statue2;
 				InGameScore += 1;
 				scoreTextFloat.DisplayText = "+1";
 				scoreTextFloat.LabelColor = new Color(255 / 255f, 187 / 255f, 186 / 255f);
 			}
-			else if (cursorPositionX >= InitialOrangePosition && cursorPositionX < InitialRedPosition)
+			else if (cursorPositionX >= _main.InitialOrangePosition && cursorPositionX < _main.InitialRedPosition)
 			{
 				Statue.Texture = Statue3;
 				InGameScore += 2;
 				scoreTextFloat.DisplayText = "+2";
 				scoreTextFloat.LabelColor = new Color(244 / 255f, 90 / 255f, 0);
 			}
-			else if (cursorPositionX >= InitialRedPosition && cursorPositionX < InitialWhitePosition)
+			else if (cursorPositionX >= _main.InitialRedPosition && cursorPositionX < _main.InitialWhitePosition)
 			{
 				Statue.Texture = Statue4;
 				InGameScore += 3;
 				scoreTextFloat.DisplayText = "+3";
 				scoreTextFloat.LabelColor = new Color(208 / 255f, 0, 0);
 			}
-			else if (cursorPositionX >= InitialWhitePosition && cursorPositionX < InitialWhitePosition + WhiteSize)
+			else if (cursorPositionX >= _main.InitialWhitePosition && cursorPositionX < _main.InitialWhitePosition + _main.WhiteSize)
 			{
 				Statue.Texture = Statue5;
 				InGameScore += 5;
@@ -149,23 +147,14 @@ public partial class Player : PlayerNodeAbstract
 		AddChild(Cursor);
 	}
 
-	private void GenerateNewBar()
+	public void GenerateNewBar()
 	{
 		Statue.Texture = StatueDefault;
 
-		var initialBarPosition = Rng.RandfRange(
-			-69.0f,
-			69.0f - SalmonSize - OrangeSize - RedSize - WhiteSize
-		);
-		InitialSalmonPosition = initialBarPosition;
-		InitialOrangePosition = InitialSalmonPosition + SalmonSize;
-		InitialRedPosition = InitialOrangePosition + OrangeSize;
-		InitialWhitePosition = InitialRedPosition + RedSize;
-
-		CreateStripe(_salmonStripe, SalmonSize, InitialSalmonPosition);
-		CreateStripe(_orangeStripe, OrangeSize, InitialOrangePosition);
-		CreateStripe(_redStripe, RedSize, InitialRedPosition);
-		CreateStripe(_whiteStripe, WhiteSize, InitialWhitePosition);
+		CreateStripe(_salmonStripe, _main.SalmonSize, _main.InitialSalmonPosition);
+		CreateStripe(_orangeStripe, _main.OrangeSize, _main.InitialOrangePosition);
+		CreateStripe(_redStripe, _main.RedSize, _main.InitialRedPosition);
+		CreateStripe(_whiteStripe, _main.WhiteSize, _main.InitialWhitePosition);
 
 		RepositionCursor();
 	}

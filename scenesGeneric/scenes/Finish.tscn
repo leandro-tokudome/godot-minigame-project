@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccw1ksmfwdcsa" path="res://scenesGeneric/sprites/finish.png" id="2_adoc0"]
 
 [node name="Finish" type="Control"]
+z_index = 999
 layout_mode = 3
 anchors_preset = 0
 

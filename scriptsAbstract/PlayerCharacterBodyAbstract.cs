@@ -39,6 +39,8 @@ public partial class PlayerCharacterBodyAbstract : CharacterBody2D, IPlayer
 		{
 			VelocityY += GravityVelocity * (float)delta;
 			Position += new Vector2(VelocityX * (float)delta, VelocityY * (float)delta);
+			if (IsOnFloor())
+				VelocityY = 0;
 		}
 
 		PhysicsProcessAction();

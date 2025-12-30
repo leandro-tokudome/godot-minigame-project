@@ -16,6 +16,8 @@ public partial class GameTimer : Node2D
 
 		_label = GetNode<Label>("Label");
 		_label.Text = GameTime.ToString();
+
+		ZIndex = 999;
 	}
 
 	public void UpdateTime()

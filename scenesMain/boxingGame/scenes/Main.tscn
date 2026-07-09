@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://c113jpgwx6lt7"]
+
+[ext_resource type="Script" uid="uid://doqxlbr21aryb" path="res://scenesMain/boxingGame/scripts/Main.cs" id="1_n58y1"]
+[ext_resource type="PackedScene" uid="uid://dilhcc1fo186y" path="res://scenesMain/boxingGame/scenes/Player1.tscn" id="2_rtdi1"]
+[ext_resource type="PackedScene" uid="uid://dspu8fi6r3yyu" path="res://scenesMain/boxingGame/scenes/Player2.tscn" id="3_g5jpl"]
+[ext_resource type="PackedScene" uid="uid://vm5ujnd0w4va" path="res://scenesMain/boxingGame/scenes/Player3.tscn" id="4_yqa31"]
+[ext_resource type="PackedScene" uid="uid://coupat0soq1hu" path="res://scenesMain/boxingGame/scenes/Player4.tscn" id="5_wa64x"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="6_g5jpl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_n58y1")
+ShowTimer = true
+GameTime = 60
+
+[node name="Player1" parent="." instance=ExtResource("2_rtdi1")]
+position = Vector2(60, 45)
+ActionButton = "action_p1"
+RelativeScoreboard = "Scoreboard1"
+
+[node name="Player2" parent="." instance=ExtResource("3_g5jpl")]
+position = Vector2(60, 99)
+ActionButton = "action_p2"
+RelativeScoreboard = "Scoreboard2"
+
+[node name="Player3" parent="." instance=ExtResource("4_yqa31")]
+position = Vector2(175, 45)
+ActionButton = "action_p3"
+RelativeScoreboard = "Scoreboard3"
+
+[node name="Player4" parent="." instance=ExtResource("5_wa64x")]
+position = Vector2(175, 99)
+ActionButton = "action_p4"
+RelativeScoreboard = "Scoreboard4"
+
+[node name="Scoreboard1" parent="." instance=ExtResource("6_g5jpl")]
+position = Vector2(18, 16)
+PlayerSprite = "Player1"
+ScaleDisplay = 0.5
+
+[node name="Scoreboard2" parent="." instance=ExtResource("6_g5jpl")]
+position = Vector2(19, 128)
+PlayerSprite = "Player2"
+ScaleDisplay = 0.5
+
+[node name="Scoreboard3" parent="." instance=ExtResource("6_g5jpl")]
+position = Vector2(238, 129)
+PlayerSprite = "Player4"
+ScaleDisplay = 0.5
+
+[node name="Scoreboard4" parent="." instance=ExtResource("6_g5jpl")]
+position = Vector2(239, 16)
+PlayerSprite = "Player3"
+ScaleDisplay = 0.5

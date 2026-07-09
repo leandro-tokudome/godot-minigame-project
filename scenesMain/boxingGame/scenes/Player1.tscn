@@ -1,0 +1,161 @@
+[gd_scene load_steps=32 format=3 uid="uid://dilhcc1fo186y"]
+
+[ext_resource type="Texture2D" uid="uid://d2fb6xe8p43pi" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-1.png" id="1_0tvq1"]
+[ext_resource type="Script" uid="uid://d2hmbeaje4trv" path="res://scenesMain/boxingGame/scripts/Player.cs" id="1_dbofa"]
+[ext_resource type="Texture2D" uid="uid://bylektjbuk05f" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-2.png" id="2_g6vd3"]
+[ext_resource type="Texture2D" uid="uid://dk5eqpn6mylsm" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-3.png" id="3_dbofa"]
+[ext_resource type="Texture2D" uid="uid://1f4jgpoi4wpk" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-4.png" id="4_qxjyg"]
+[ext_resource type="Texture2D" uid="uid://bn8yj77asvxd2" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-5.png" id="5_frfcs"]
+[ext_resource type="Texture2D" uid="uid://dny0fpevqfx5a" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-6.png" id="6_fftr4"]
+[ext_resource type="Texture2D" uid="uid://dm3t1c35ofdla" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-7.png" id="7_u14as"]
+[ext_resource type="Texture2D" uid="uid://cxomp1uk40cu8" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-8.png" id="8_tpktc"]
+[ext_resource type="Texture2D" uid="uid://ccb5ti2i4irw8" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-9.png" id="9_7n6fk"]
+[ext_resource type="Texture2D" uid="uid://dgoo2sywjvwpp" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-10.png" id="10_00ix5"]
+[ext_resource type="Texture2D" uid="uid://drurje1wwxtnb" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-11.png" id="11_smcs3"]
+[ext_resource type="Texture2D" uid="uid://08j8l3cxi1kh" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-12.png" id="12_xvgik"]
+[ext_resource type="Texture2D" uid="uid://c5f247k0mic1t" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-13.png" id="13_iy8ad"]
+[ext_resource type="Texture2D" uid="uid://sigvra78p25r" path="res://scenesMain/boxingGame/sprites/player1/player1-action-left-hand-14.png" id="14_t7tt5"]
+[ext_resource type="Texture2D" uid="uid://bido5tmgg1q1t" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-1.png" id="15_22sdu"]
+[ext_resource type="Texture2D" uid="uid://d2ad5pelau7jv" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-2.png" id="16_iir83"]
+[ext_resource type="Texture2D" uid="uid://dq7u73jn5cd6q" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-3.png" id="17_iud7m"]
+[ext_resource type="Texture2D" uid="uid://cups6iwt67bat" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-4.png" id="18_hle1b"]
+[ext_resource type="Texture2D" uid="uid://5y68cyfk8j5i" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-5.png" id="19_6tony"]
+[ext_resource type="Texture2D" uid="uid://de0i6edomfxni" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-6.png" id="20_pg1wl"]
+[ext_resource type="Texture2D" uid="uid://bs08fpkmknf2" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-7.png" id="21_av0me"]
+[ext_resource type="Texture2D" uid="uid://bdens7lefnomg" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-8.png" id="22_avu03"]
+[ext_resource type="Texture2D" uid="uid://gwjpl3yrm35x" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-9.png" id="23_77qeg"]
+[ext_resource type="Texture2D" uid="uid://bu77mrqflyusl" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-10.png" id="24_m2fhk"]
+[ext_resource type="Texture2D" uid="uid://dxscl6fiq0gi7" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-11.png" id="25_f15d8"]
+[ext_resource type="Texture2D" uid="uid://d0bf30y6btk0y" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-12.png" id="26_m2ud5"]
+[ext_resource type="Texture2D" uid="uid://wtj7hkeiec4p" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-13.png" id="27_46dl7"]
+[ext_resource type="Texture2D" uid="uid://cyhyl70kx8fyi" path="res://scenesMain/boxingGame/sprites/player1/player1-action-right-hand-14.png" id="28_303ey"]
+[ext_resource type="Texture2D" uid="uid://b6rx25yqyftcd" path="res://scenesMain/boxingGame/sprites/misc/stacked-blocks.png" id="30_dbofa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwv8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0tvq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g6vd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dbofa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qxjyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_frfcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fftr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u14as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tpktc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7n6fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_00ix5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_smcs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xvgik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iy8ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t7tt5")
+}],
+"loop": false,
+"name": &"action-left-hand",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_22sdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_iir83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_iud7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hle1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6tony")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pg1wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_av0me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_avu03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_77qeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m2fhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_f15d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_m2ud5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_46dl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_303ey")
+}],
+"loop": false,
+"name": &"action-right-hand",
+"speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0tvq1")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 0.0
+}]
+
+[node name="Player1" type="Node2D"]
+script = ExtResource("1_dbofa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jwv8u")
+animation = &"action-left-hand"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-25, 0)
+texture = ExtResource("30_dbofa")
+
+[node name="BlockOneMarker" type="Marker2D" parent="."]
+position = Vector2(-36, -16)
+
+[node name="FirstQueue" type="Marker2D" parent="."]
+position = Vector2(20, -2)
+
+[node name="LastQueue" type="Marker2D" parent="."]
+position = Vector2(56, -2)
+
+[node name="TimerEnergyUp" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true

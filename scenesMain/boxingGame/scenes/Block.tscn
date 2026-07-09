@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://3sid3y0tqnkg"]
+
+[ext_resource type="Script" uid="uid://03mthbuylo00" path="res://scenesMain/boxingGame/scripts/Block.cs" id="1_4jfhc"]
+[ext_resource type="Texture2D" uid="uid://ds1cil6km3hjp" path="res://scenesMain/boxingGame/sprites/misc/block1-1.png" id="1_36i7y"]
+[ext_resource type="Texture2D" uid="uid://cprrfup65ajwp" path="res://scenesMain/boxingGame/sprites/misc/block1-2.png" id="2_4jfhc"]
+[ext_resource type="Texture2D" uid="uid://d0hbvuj7atppe" path="res://scenesMain/boxingGame/sprites/misc/block1-3.png" id="3_r1uv6"]
+[ext_resource type="Texture2D" uid="uid://d04biwsogc0v7" path="res://scenesMain/boxingGame/sprites/misc/block2-1.png" id="4_k21u1"]
+[ext_resource type="Texture2D" uid="uid://dqlsuypdv0ppy" path="res://scenesMain/boxingGame/sprites/misc/block2-2.png" id="5_bahld"]
+[ext_resource type="Texture2D" uid="uid://bixn7f6v87cy5" path="res://scenesMain/boxingGame/sprites/misc/block2-3.png" id="6_phbdq"]
+[ext_resource type="Texture2D" uid="uid://35fo0crvescx" path="res://scenesMain/boxingGame/sprites/misc/block3-1.png" id="7_7omet"]
+[ext_resource type="Texture2D" uid="uid://d286dg3tgx73t" path="res://scenesMain/boxingGame/sprites/misc/block3-2.png" id="8_itt14"]
+[ext_resource type="Texture2D" uid="uid://b68i3x803pvwn" path="res://scenesMain/boxingGame/sprites/misc/block3-3.png" id="9_10sla"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i6byk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_36i7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4jfhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r1uv6")
+}],
+"loop": false,
+"name": &"destroy-block1",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k21u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bahld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_phbdq")
+}],
+"loop": false,
+"name": &"destroy-block2",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7omet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_itt14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_10sla")
+}],
+"loop": false,
+"name": &"destroy-block3",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_36i7y")
+}],
+"loop": false,
+"name": &"idle-block1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k21u1")
+}],
+"loop": false,
+"name": &"idle-block2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7omet")
+}],
+"loop": false,
+"name": &"idle-block3",
+"speed": 5.0
+}]
+
+[node name="Block" type="Node2D"]
+script = ExtResource("1_4jfhc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i6byk")
+animation = &"idle-block3"

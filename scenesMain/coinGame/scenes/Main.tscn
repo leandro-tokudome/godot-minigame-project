@@ -1,0 +1,136 @@
+[gd_scene load_steps=13 format=3 uid="uid://cxe2ortmt6kjg"]
+
+[ext_resource type="Script" uid="uid://cg17lneocg0wt" path="res://scenesMain/coinGame/scripts/Main.cs" id="1_bmuha"]
+[ext_resource type="PackedScene" uid="uid://bln4rhq6nsltd" path="res://scenesMain/coinGame/scenes/Player1.tscn" id="1_uuo74"]
+[ext_resource type="PackedScene" uid="uid://gah6ijwv2rwm" path="res://scenesMain/coinGame/scenes/Player2.tscn" id="3_7utmu"]
+[ext_resource type="Texture2D" uid="uid://dd5f4m2fei3dm" path="res://scenesMain/coinGame/sprites/misc/clouds.png" id="3_yael7"]
+[ext_resource type="PackedScene" uid="uid://bhmufua4jgnp1" path="res://scenesMain/coinGame/scenes/Player3.tscn" id="4_lk4yq"]
+[ext_resource type="Texture2D" uid="uid://cimbvu4e36vav" path="res://scenesMain/coinGame/sprites/misc/windows.png" id="4_uuqf2"]
+[ext_resource type="PackedScene" uid="uid://bsrxi6vag7ilr" path="res://scenesMain/coinGame/scenes/Player4.tscn" id="5_de7c6"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="8_lk4yq"]
+[ext_resource type="PackedScene" uid="uid://bhci6srgoy24k" path="res://scenesMain/coinGame/scenes/Pipe.tscn" id="9_de7c6"]
+[ext_resource type="PackedScene" uid="uid://bneg3e85ceore" path="res://scenesMain/coinGame/scenes/PipeGround.tscn" id="10_q4ua0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuo74"]
+size = Vector2(24.5, 146.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yatqw"]
+size = Vector2(256, 23)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bmuha")
+ShowTimer = true
+GameTime = 90
+
+[node name="Player1" parent="." instance=ExtResource("1_uuo74")]
+position = Vector2(68, 36)
+ActionButton = "action_p1"
+RelativeScoreboard = "Scoreboard1"
+HasPhysic = true
+GravityVelocity = 300.0
+
+[node name="Player2" parent="." instance=ExtResource("3_7utmu")]
+position = Vector2(188, 36)
+Direction = -1
+ActionButton = "action_p2"
+RelativeScoreboard = "Scoreboard2"
+HasPhysic = true
+GravityVelocity = 300.0
+
+[node name="Player3" parent="." instance=ExtResource("4_lk4yq")]
+position = Vector2(68, 108)
+ActionButton = "action_p3"
+RelativeScoreboard = "Scoreboard3"
+HasPhysic = true
+GravityVelocity = 300.0
+
+[node name="Player4" parent="." instance=ExtResource("5_de7c6")]
+position = Vector2(188, 108)
+Direction = -1
+ActionButton = "action_p4"
+RelativeScoreboard = "Scoreboard4"
+HasPhysic = true
+GravityVelocity = 300.0
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-8.5, 71.5)
+shape = SubResource("RectangleShape2D_uuo74")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(265.25, 71.25)
+shape = SubResource("RectangleShape2D_uuo74")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(128, 153)
+shape = SubResource("RectangleShape2D_yatqw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(128, -10.5)
+shape = SubResource("RectangleShape2D_yatqw")
+
+[node name="Windows" type="Sprite2D" parent="Walls"]
+position = Vector2(5, 72)
+texture = ExtResource("4_uuqf2")
+
+[node name="Windows2" type="Sprite2D" parent="Walls"]
+position = Vector2(251, 72)
+texture = ExtResource("4_uuqf2")
+flip_h = true
+
+[node name="Clouds" type="Sprite2D" parent="Walls"]
+position = Vector2(128, 140)
+texture = ExtResource("3_yael7")
+
+[node name="Clouds2" type="Sprite2D" parent="Walls"]
+position = Vector2(128, 0)
+rotation = -3.14159
+texture = ExtResource("3_yael7")
+
+[node name="Scoreboard1" parent="." instance=ExtResource("8_lk4yq")]
+position = Vector2(54, 15)
+PlayerSprite = "player1"
+ScaleDisplay = 0.6
+IsTransparent = true
+LabelColor = "blue"
+
+[node name="Scoreboard2" parent="." instance=ExtResource("8_lk4yq")]
+position = Vector2(94, 15)
+PlayerSprite = "player2"
+ScaleDisplay = 0.6
+IsTransparent = true
+LabelColor = "red"
+
+[node name="Scoreboard3" parent="." instance=ExtResource("8_lk4yq")]
+position = Vector2(162, 15)
+PlayerSprite = "player3"
+ScaleDisplay = 0.6
+IsTransparent = true
+LabelColor = "green"
+
+[node name="Scoreboard4" parent="." instance=ExtResource("8_lk4yq")]
+position = Vector2(202, 15)
+PlayerSprite = "player4"
+ScaleDisplay = 0.6
+IsTransparent = true
+LabelColor = "yellow"
+
+[node name="Pipe" parent="." instance=ExtResource("9_de7c6")]
+position = Vector2(128, 72)
+
+[node name="PipeGround" parent="." instance=ExtResource("10_q4ua0")]
+position = Vector2(68, 72)
+
+[node name="PipeGround2" parent="." instance=ExtResource("10_q4ua0")]
+position = Vector2(188, 72)
+
+[node name="PointSpawn" type="Marker2D" parent="."]
+
+[node name="PointSpawnTimer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="MissileSpawnTimer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true

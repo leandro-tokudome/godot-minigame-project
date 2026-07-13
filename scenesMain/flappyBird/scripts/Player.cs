@@ -29,7 +29,7 @@ public partial class Player : PlayerCharacterBodyAbstract
 	{
 		_animatedSprite.Play("action");
 
-		VelocityY = -JumpVelocity;
+		VelocityYChange(-JumpVelocity);
 	}
 
 	public override void PhysicsProcessAction()
@@ -45,15 +45,13 @@ public partial class Player : PlayerCharacterBodyAbstract
 				ZIndex = 999;
 				GravityVelocity = 0f;
 				VelocityX = -50f;
-				VelocityY = 0;
+				VelocityYChange(0f);
 				_collisionShape.Disabled = true;
 
 				_animatedSprite.Play("player_death");
 
 				_main.RemovePlayer(Name);
 			}
-			else
-				VelocityY = 0;
 		}
 	}
 

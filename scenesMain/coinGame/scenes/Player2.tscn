@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://gah6ijwv2rwm"]
+
+[ext_resource type="Script" uid="uid://d2tys01o5mc0e" path="res://scenesMain/coinGame/scripts/Player.cs" id="1_2y8v8"]
+[ext_resource type="Texture2D" uid="uid://hbunj0ppxmtc" path="res://scenesMain/coinGame/sprites/player2/player2-action-1.png" id="2_2y8v8"]
+[ext_resource type="Texture2D" uid="uid://ddpathx0lgxer" path="res://scenesMain/coinGame/sprites/player2/player2-action-2.png" id="3_47c7g"]
+[ext_resource type="Texture2D" uid="uid://cljk2f62dc553" path="res://scenesMain/coinGame/sprites/player2/player2-action-3.png" id="4_iu0yo"]
+[ext_resource type="Texture2D" uid="uid://bj7xtrb0tiy3u" path="res://scenesMain/coinGame/sprites/player2/player2-action-4.png" id="5_koh7q"]
+[ext_resource type="Texture2D" uid="uid://c0y51po4wgevp" path="res://scenesMain/coinGame/sprites/player2/player2-stun-1.png" id="10_4ga3e"]
+[ext_resource type="Texture2D" uid="uid://cvaxdkke2ljjh" path="res://scenesMain/coinGame/sprites/player2/player2-stun-2.png" id="11_lgy7c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80b7q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2y8v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_47c7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iu0yo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_koh7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iu0yo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_47c7g")
+}],
+"loop": false,
+"name": &"action",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2y8v8")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4ga3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lgy7c")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nl6k"]
+size = Vector2(10, 16)
+
+[node name="Player1" type="CharacterBody2D"]
+script = ExtResource("1_2y8v8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_80b7q")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2nl6k")
+
+[node name="TurnOverCooldown" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="StunCooldown" type="Timer" parent="."]
+wait_time = 4.5
+one_shot = true

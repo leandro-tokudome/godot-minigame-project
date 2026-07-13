@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=3 uid="uid://crx5brq5dfq3i"]
+
+[ext_resource type="Script" uid="uid://lakhnkn0mbl6" path="res://scenesMain/coinGame/scripts/Missile.cs" id="1_ewosi"]
+[ext_resource type="Texture2D" uid="uid://dyyjmp1p1rnhu" path="res://scenesMain/coinGame/sprites/misc/explosion-1.png" id="2_0wln1"]
+[ext_resource type="Texture2D" uid="uid://dlaif4fjy7fmg" path="res://scenesMain/coinGame/sprites/misc/explosion-2.png" id="3_i08n3"]
+[ext_resource type="Texture2D" uid="uid://wush6gbis0fx" path="res://scenesMain/coinGame/sprites/misc/explosion-3.png" id="4_131kj"]
+[ext_resource type="Texture2D" uid="uid://cenh1mmw3q45a" path="res://scenesMain/coinGame/sprites/misc/explosion-4.png" id="5_7ewfj"]
+[ext_resource type="Texture2D" uid="uid://ctu2h0wgw0lkf" path="res://scenesMain/coinGame/sprites/misc/explosion-5.png" id="6_gdxv8"]
+[ext_resource type="Texture2D" uid="uid://m05esgwaf55o" path="res://scenesMain/coinGame/sprites/misc/explosion-6.png" id="7_hq68q"]
+[ext_resource type="Texture2D" uid="uid://dmaa4h762h2xr" path="res://scenesMain/coinGame/sprites/misc/explosion-7.png" id="8_b37dm"]
+[ext_resource type="Texture2D" uid="uid://bqw8rd1vqe8ox" path="res://scenesMain/coinGame/sprites/misc/explosion-8.png" id="9_yinaw"]
+[ext_resource type="Texture2D" uid="uid://dqpd65v84r2wy" path="res://scenesMain/coinGame/sprites/misc/missile-1.png" id="10_ifg61"]
+[ext_resource type="Texture2D" uid="uid://ciuad8qvb66s3" path="res://scenesMain/coinGame/sprites/misc/missile-2.png" id="11_omwxp"]
+[ext_resource type="Texture2D" uid="uid://dkd8ov2h208b1" path="res://scenesMain/coinGame/sprites/misc/missile-3.png" id="12_pea55"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e45x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0wln1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i08n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_131kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ewfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gdxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hq68q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b37dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yinaw")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ifg61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_omwxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pea55")
+}],
+"loop": true,
+"name": &"missile",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2hw4"]
+size = Vector2(16, 8)
+
+[node name="Missile" type="Node2D"]
+script = ExtResource("1_ewosi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0e45x")
+animation = &"missile"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_t2hw4")

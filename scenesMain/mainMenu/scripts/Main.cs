@@ -18,7 +18,7 @@ public partial class Main : Node2D
 
 	public void OnPlayPressed()
 	{
-
+		GetTree().ChangeSceneToFile("scenesMain/mainMenu/scenes/PlayerNumberSelection.tscn");
 	}
 
 	public void OnExitPressed()

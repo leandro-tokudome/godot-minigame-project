@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn11vc76gl7d3"]
+
+[ext_resource type="Texture2D" uid="uid://dcq157coaoa4k" path="res://scenesMain/ghostGame/sprites/misc/ghost.png" id="1_cfye2"]
+[ext_resource type="Script" uid="uid://cvdltl8o8340n" path="res://scenesMain/ghostGame/scripts/Entity.cs" id="1_n40if"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n40if"]
+size = Vector2(14, 18)
+
+[node name="Ghost" type="Node2D"]
+script = ExtResource("1_n40if")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cfye2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_n40if")

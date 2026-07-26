@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsldjvlyllfwy"]
+
+[ext_resource type="PackedScene" uid="uid://c1rhvxn5y2f2n" path="res://scenesMain/ghostGame/scenes/Player1.tscn" id="1_4j2wh"]
+[ext_resource type="Script" uid="uid://ddxhv3yf067vs" path="res://scenesMain/ghostGame/scripts/Main.cs" id="1_r37k0"]
+[ext_resource type="PackedScene" uid="uid://btmb1f5086hlm" path="res://scenesMain/ghostGame/scenes/Player2.tscn" id="3_qo7fb"]
+[ext_resource type="PackedScene" uid="uid://ph61xbvdjjs4" path="res://scenesMain/ghostGame/scenes/Player3.tscn" id="4_bhsox"]
+[ext_resource type="PackedScene" uid="uid://dtlmujrfdhx0l" path="res://scenesMain/ghostGame/scenes/Player4.tscn" id="5_yx3l8"]
+[ext_resource type="PackedScene" uid="uid://s4yuxijen3ew" path="res://scenesGeneric/scenes/Scoreboard.tscn" id="6_l8xsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo7fb"]
+size = Vector2(256, 20)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_r37k0")
+ShowTimer = true
+GameTime = 45
+Players = 4
+
+[node name="Scoreboard1" parent="." instance=ExtResource("6_l8xsq")]
+position = Vector2(35, 20)
+PlayerSprite = "player1"
+ScaleDisplay = 0.6
+IsTransparent = true
+LabelColor = "blue"
+
+[node name="Scoreboard2" parent="." instance=ExtResource("6_l8xsq")]
+position = Vector2(95, 20)
+PlayerSprite = "player2"
+ScaleDisplay = 0.6
+IsTransparent = true
+LabelColor = "red"
+
+[node name="Scoreboard3" parent="." instance=ExtResource("6_l8xsq")]
+position = Vector2(155, 20)
+PlayerSprite = "player3"
+ScaleDisplay = 0.6
+IsTransparent = true
+LabelColor = "green"
+
+[node name="Scoreboard4" parent="." instance=ExtResource("6_l8xsq")]
+position = Vector2(215, 20)
+PlayerSprite = "player4"
+ScaleDisplay = 0.6
+IsTransparent = true
+LabelColor = "yellow"
+
+[node name="Player1" parent="." instance=ExtResource("1_4j2wh")]
+position = Vector2(35, 120)
+PlayerIndex = 1
+ActionButton = "action_p1"
+ActionCooldown = 0.3
+RelativeScoreboard = "Scoreboard1"
+
+[node name="Player2" parent="." instance=ExtResource("3_qo7fb")]
+position = Vector2(95, 120)
+PlayerIndex = 2
+ActionButton = "action_p2"
+ActionCooldown = 0.3
+RelativeScoreboard = "Scoreboard2"
+
+[node name="Player3" parent="." instance=ExtResource("4_bhsox")]
+position = Vector2(155, 120)
+PlayerIndex = 3
+ActionButton = "action_p3"
+ActionCooldown = 0.3
+RelativeScoreboard = "Scoreboard3"
+
+[node name="Player4" parent="." instance=ExtResource("5_yx3l8")]
+position = Vector2(215, 120)
+PlayerIndex = 4
+ActionButton = "action_p4"
+ActionCooldown = 0.3
+RelativeScoreboard = "Scoreboard4"
+
+[node name="Player1SpawnMarker2D" type="Marker2D" parent="."]
+position = Vector2(53, -20)
+
+[node name="Player2SpawnMarker2D" type="Marker2D" parent="."]
+position = Vector2(113, -20)
+
+[node name="Player3SpawnMarker2D" type="Marker2D" parent="."]
+position = Vector2(173, -20)
+
+[node name="Player4SpawnMarker2D" type="Marker2D" parent="."]
+position = Vector2(233, -20)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.425
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(128, 164)
+shape = SubResource("RectangleShape2D_qo7fb")

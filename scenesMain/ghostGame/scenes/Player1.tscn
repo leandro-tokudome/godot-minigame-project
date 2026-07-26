@@ -1,0 +1,91 @@
+[gd_scene load_steps=18 format=3 uid="uid://c1rhvxn5y2f2n"]
+
+[ext_resource type="Script" uid="uid://cjjjj8kp7e50p" path="res://scenesMain/ghostGame/scripts/Player.cs" id="1_3lfaw"]
+[ext_resource type="Texture2D" uid="uid://dvywtdl8om25o" path="res://scenesMain/ghostGame/sprites/player1/player1-action-1.png" id="1_k30l2"]
+[ext_resource type="Texture2D" uid="uid://djq16r6jvfh85" path="res://scenesMain/ghostGame/sprites/player1/player1-action-2.png" id="2_3lfaw"]
+[ext_resource type="Texture2D" uid="uid://bhsd0j8g8jpnp" path="res://scenesMain/ghostGame/sprites/player1/player1-action-3.png" id="3_l3eil"]
+[ext_resource type="Texture2D" uid="uid://b45rikuxqbbf7" path="res://scenesMain/ghostGame/sprites/player1/player1-action-4.png" id="4_tw60s"]
+[ext_resource type="Texture2D" uid="uid://b506luu2qe1k" path="res://scenesMain/ghostGame/sprites/player1/player1-action-5.png" id="5_3alew"]
+[ext_resource type="Texture2D" uid="uid://bii7tunj4pwdg" path="res://scenesMain/ghostGame/sprites/player1/player1-action-6.png" id="6_ip6vb"]
+[ext_resource type="Texture2D" uid="uid://byxnlw14qfd5d" path="res://scenesMain/ghostGame/sprites/player1/player1-action-7.png" id="7_6motq"]
+[ext_resource type="Texture2D" uid="uid://pptiqwsjkegn" path="res://scenesMain/ghostGame/sprites/player1/player1-action-8.png" id="8_31ebe"]
+[ext_resource type="Texture2D" uid="uid://cw61wttn0fs7k" path="res://scenesMain/ghostGame/sprites/player1/player1-action-9.png" id="9_3x4n7"]
+[ext_resource type="Texture2D" uid="uid://bh0u2ketj82x2" path="res://scenesMain/ghostGame/sprites/player1/player1-action-10.png" id="10_qmywu"]
+[ext_resource type="Texture2D" uid="uid://b0gda2pfvvlxs" path="res://scenesMain/ghostGame/sprites/player1/player1-idle-1.png" id="11_5e0f7"]
+[ext_resource type="Texture2D" uid="uid://b0qk6mio4ep8q" path="res://scenesMain/ghostGame/sprites/player1/player1-idle-2.png" id="12_qik28"]
+[ext_resource type="Texture2D" uid="uid://ctfdt61hx4sxp" path="res://scenesMain/ghostGame/sprites/player1/player1-idle-3.png" id="13_5bemx"]
+[ext_resource type="Texture2D" uid="uid://bnpo2s20nr1e2" path="res://scenesMain/ghostGame/sprites/player1/player1-idle-4.png" id="14_u02lk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skgtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k30l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3lfaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l3eil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tw60s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3alew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ip6vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6motq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_31ebe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3x4n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qmywu")
+}],
+"loop": false,
+"name": &"action",
+"speed": 50.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_5e0f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qik28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5bemx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_u02lk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lfaw"]
+size = Vector2(12, 4)
+
+[node name="Player1" type="Node2D"]
+script = ExtResource("1_3lfaw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_skgtl")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18, -6)
+shape = SubResource("RectangleShape2D_3lfaw")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-16, -24)

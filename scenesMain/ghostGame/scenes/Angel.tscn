@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbw2yyxabgywi"]
+
+[ext_resource type="Script" uid="uid://cvdltl8o8340n" path="res://scenesMain/ghostGame/scripts/Entity.cs" id="1_553f5"]
+[ext_resource type="Texture2D" uid="uid://jli2vb8e7mib" path="res://scenesMain/ghostGame/sprites/misc/angel.png" id="1_teorf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_553f5"]
+size = Vector2(14, 18)
+
+[node name="Angel" type="Node2D"]
+script = ExtResource("1_553f5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_teorf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_553f5")
